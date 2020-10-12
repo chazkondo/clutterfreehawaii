@@ -64,7 +64,7 @@ function IndexHeader({ backgroundDark }) {
                         transition: "opacity 3s linear",
                     }}
                 ></div>
-                {backgroundDark && (
+                {false && (
                     <div
                         className="rain"
                         style={{
