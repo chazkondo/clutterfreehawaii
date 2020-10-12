@@ -67,6 +67,7 @@ function Index() {
 
     return (
         <>
+            {console.log(backgroundDark, `this should be false for daytime`)}
             <IndexNavbar showProgressBar backgroundDark={backgroundDark} />
             <IndexHeader backgroundDark={backgroundDark} />
             <div className="main">
@@ -82,7 +83,7 @@ function Index() {
                 <Section4 backgroundDark={backgroundDark} />
                 {/* <Section5 backgroundDark={backgroundDark} /> */}
                 <span
-                    onClick={() => toggleMode()}
+                    // onClick={() => toggleMode()}
                     style={{
                         cursor: `pointer`,
                         bottom: `10%`,
