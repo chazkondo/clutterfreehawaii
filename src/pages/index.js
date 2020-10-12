@@ -81,7 +81,7 @@ function Index() {
                 />
                 <Section3 backgroundDark={backgroundDark} />
                 <Section4 backgroundDark={backgroundDark} />
-                {/* <Section5 backgroundDark={backgroundDark} /> */}
+                <Section5 backgroundDark={backgroundDark} />
                 <span
                     // onClick={() => toggleMode()}
                     style={{

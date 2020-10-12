@@ -6,6 +6,8 @@ import { motion } from 'framer-motion'
 
 import useIntersect from "../Helpers/useIntersect";
 
+import className from 'classnames';
+
 
 function Section1({ backgroundDark, borderVisible }) {
 
@@ -129,9 +131,9 @@ function Section1({ backgroundDark, borderVisible }) {
         <>
             {toggleHighlightsOn()}
             <span ref={exitRef} />
-            <div className={backgroundDark ? "section1Dark" : "section1"}>
-                <div className={backgroundDark ? "sectionOverlayDark" : "sectionOverlay"} />
-                <div className={backgroundDark ? "dividerDark" : "divider"} />
+            <div className={className({ "section1Dark": backgroundDark }, { "section1": !backgroundDark })}>
+                <div className={className({ "sectionOverlayDark": backgroundDark }, { "sectionOverlay": !backgroundDark })} />
+                <div className={className({ "dividerDark": backgroundDark }, { "divider": !backgroundDark })} />
 
                 <Container className="section1Container" style={{ textAlign: 'center', paddingTop: '8.5%', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
                     <svg style={{ fill: backgroundDark ? 'lightgreen' : 'green', position: 'absolute', bottom: '8%', opacity: backgroundDark ? 0.1 : 0.11, zIndex: backgroundDark ? '0' : '-3' }} width="100%" height="640pt" version="1.0" viewBox="0 0 1280 640" xmlns="http://www.w3.org/2000/svg">
