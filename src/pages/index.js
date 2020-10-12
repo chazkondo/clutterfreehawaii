@@ -22,17 +22,10 @@ import "../utils/fontawesome"
 import classnames from "classnames"
 
 function Index() {
-    const hours = new Date().getHours()
-    const isDayTime = hours > 6 && hours < 18
-
-    console.log(isDayTime, `wtf is this here?`)
-    if (isDayTime === undefined) {
-        isDayTime = false
-    }
-    console.log(isDayTime, `wtf is this here? after the if statement?`)
     const [borderVisible, setBorderVisible] = React.useState(false)
     const [backgroundDark, setBackgroundDark] = React.useState(false)
     const [nightModeClicked, setNightModeClicked] = React.useState(false)
+    const [isLoading, setIsLoading] = React.useState(true)
     const [jumpEffect, toggleJumpEffect] = React.useState(``)
 
     function toggleMode() {
@@ -65,9 +58,17 @@ function Index() {
         }
     }, [nightModeClicked])
 
-    return (
+    React.useEffect(() => {
+        const hours = new Date().getHours()
+        const isDayTime = hours > 6 && hours < 18
+        setBackgroundDark(!isDayTime)
+        setIsLoading(false)
+    }, [])
+
+    return isLoading ? (
+        <div>loading</div>
+    ) : (
         <>
-            {console.log(backgroundDark, `this should be false for daytime`)}
             <IndexNavbar showProgressBar backgroundDark={backgroundDark} />
             <IndexHeader backgroundDark={backgroundDark} />
             <div className="main">
@@ -83,7 +84,7 @@ function Index() {
                 <Section4 backgroundDark={backgroundDark} />
                 {/* <Section5 backgroundDark={backgroundDark} /> */}
                 <span
-                    // onClick={() => toggleMode()}
+                    onClick={() => toggleMode()}
                     style={{
                         cursor: `pointer`,
                         bottom: `10%`,
