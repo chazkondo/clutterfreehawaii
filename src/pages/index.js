@@ -24,10 +24,12 @@ import classnames from "classnames"
 function Index() {
     const hours = new Date().getHours()
     const isDayTime = hours > 6 && hours < 18
+
+    console.log(isDayTime, `wtf is this here?`)
     if (isDayTime === undefined) {
         isDayTime = false
     }
-
+    console.log(isDayTime, `wtf is this here? after the if statement?`)
     const [borderVisible, setBorderVisible] = React.useState(false)
     const [backgroundDark, setBackgroundDark] = React.useState(!isDayTime)
     const [nightModeClicked, setNightModeClicked] = React.useState(false)
@@ -65,10 +67,7 @@ function Index() {
 
     return (
         <>
-            <IndexNavbar
-                showProgressBar={true}
-                backgroundDark={backgroundDark}
-            />
+            <IndexNavbar showProgressBar backgroundDark={backgroundDark} />
             <IndexHeader backgroundDark={backgroundDark} />
             <div className="main">
                 <Section1

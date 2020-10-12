@@ -4,9 +4,9 @@ import React, { svg, button } from "react"
 // Video
 import { Video } from "../Video/Video.jsx"
 import { Divider } from "../Dividers/Divider.jsx"
-// import HeaderContent from "../Headers/HeaderContent.jsx"
+import HeaderContent from "../Headers/HeaderContent.jsx"
 
-const HeaderContent = React.lazy(() => import("./HeaderContent"))
+// const HeaderContent = React.lazy(() => import("./HeaderContent"))
 
 function IndexHeader({ backgroundDark }) {
     const [play, pressPlay] = React.useState(false)
@@ -22,6 +22,11 @@ function IndexHeader({ backgroundDark }) {
             "url(" + require("../../assets/img/creative-commons-zen.jpg") + ")"
         )
     })
+
+    console.log(
+        backgroundDark,
+        "IS THIS UNDEFINED??!!?!? from inside index header"
+    )
 
     return (
         <>
@@ -72,15 +77,15 @@ function IndexHeader({ backgroundDark }) {
                 )}
                 <div className={backgroundDark ? "filter" : "filterLight"} />
                 <div className="content-center">
-                    <React.Suspense fallback={<div></div>}>
-                        <HeaderContent
-                            backgroundDark={backgroundDark}
-                            backgroundOpacity={backgroundOpacity}
-                            setBackgroundOpacity={setBackgroundOpacity}
-                            setGroundZeroOpacity={setGroundZeroOpacity}
-                            pressPlay={pressPlay}
-                        />
-                    </React.Suspense>
+                    {/* <React.Suspense fallback={<div></div>}> */}
+                    <HeaderContent
+                        backgroundDark={backgroundDark}
+                        backgroundOpacity={backgroundOpacity}
+                        setBackgroundOpacity={setBackgroundOpacity}
+                        setGroundZeroOpacity={setGroundZeroOpacity}
+                        pressPlay={pressPlay}
+                    />
+                    {/* </React.Suspense> */}
                 </div>
                 <Divider />
             </div>
