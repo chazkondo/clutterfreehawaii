@@ -1,5 +1,5 @@
 module.exports = {
-    siteUrl: `http://localhost:8004`, // Site domain. Do not include a trailing slash!
+    siteUrl: `https://thirsty-pasteur-0822da.netlify.app`, // Site domain. Do not include a trailing slash!
 
     postsPerPage: 9, // Number of posts shown on paginated pages (changes this requires sometimes to delete the cache)
 
