@@ -336,6 +336,7 @@ function IndexNavbar(props) {
                                 state.navbarColor
                             )}
                             style={{
+                                position: `fixed`,
                                 backgroundColor: props.backgroundDark
                                     ? `mediumspringgreen`
                                     : ``,

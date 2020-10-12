@@ -25,7 +25,7 @@ function Index() {
     const hours = new Date().getHours()
     const isDayTime = hours > 6 && hours < 18
     if (isDayTime === undefined) {
-        isDayTime = true
+        isDayTime = false
     }
 
     const [borderVisible, setBorderVisible] = React.useState(false)
@@ -65,7 +65,10 @@ function Index() {
 
     return (
         <>
-            <IndexNavbar showProgressBar backgroundDark={backgroundDark} />
+            <IndexNavbar
+                showProgressBar={true}
+                backgroundDark={backgroundDark}
+            />
             <IndexHeader backgroundDark={backgroundDark} />
             <div className="main">
                 <Section1
