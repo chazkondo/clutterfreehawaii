@@ -9,6 +9,9 @@
  * via ids/classnames etc.
  *
  */
+
+import "bootstrap/dist/css/bootstrap.css"
+
 var trustAllScripts = function () {
     var scriptNodes = document.querySelectorAll(".load-external-scripts script")
 
