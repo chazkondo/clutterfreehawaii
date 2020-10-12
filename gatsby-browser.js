@@ -9,7 +9,10 @@
  * via ids/classnames etc.
  *
  */
-require("bootstrap/dist/css/bootstrap.min.css")
+//css
+require("./src/assets/css/bootstrap.min.css")
+// require("./src/assets/scss/paper-kit.scss?v=1.2.0")
+require("./src/assets/demo/demo.css?v=1.2.0")
 var trustAllScripts = function () {
     var scriptNodes = document.querySelectorAll(".load-external-scripts script")
 
