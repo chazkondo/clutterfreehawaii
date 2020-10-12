@@ -4,7 +4,7 @@
     "contentApiKey": "e146ffd9c807b1d4442ab01212"
   },
   "production": {
-    "apiUrl": "http://localhost:3001",
-    "contentApiKey": "e146ffd9c807b1d4442ab01212"
+    "apiUrl": "https://blogtestaaa.herokuapp.com",
+    "contentApiKey": "c7a48b229615279031101ffe94"
   }
 }
