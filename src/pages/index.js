@@ -31,7 +31,7 @@ function Index() {
     }
     console.log(isDayTime, `wtf is this here? after the if statement?`)
     const [borderVisible, setBorderVisible] = React.useState(false)
-    const [backgroundDark, setBackgroundDark] = React.useState(!isDayTime)
+    const [backgroundDark, setBackgroundDark] = React.useState(false)
     const [nightModeClicked, setNightModeClicked] = React.useState(false)
     const [jumpEffect, toggleJumpEffect] = React.useState(``)
 
@@ -81,7 +81,7 @@ function Index() {
                 />
                 <Section3 backgroundDark={backgroundDark} />
                 <Section4 backgroundDark={backgroundDark} />
-                <Section5 backgroundDark={backgroundDark} />
+                {/* <Section5 backgroundDark={backgroundDark} /> */}
                 <span
                     // onClick={() => toggleMode()}
                     style={{
