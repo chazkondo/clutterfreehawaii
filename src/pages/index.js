@@ -24,6 +24,9 @@ import classnames from "classnames"
 function Index() {
     const hours = new Date().getHours()
     const isDayTime = hours > 6 && hours < 18
+    if (isDayTime === undefined) {
+        isDayTime = true
+    }
 
     const [borderVisible, setBorderVisible] = React.useState(false)
     const [backgroundDark, setBackgroundDark] = React.useState(!isDayTime)

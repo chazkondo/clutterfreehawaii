@@ -21,6 +21,13 @@ export default function HeaderContent({ backgroundDark, backgroundOpacity, setBa
             rotate: 0,
             transition: { delay: 0, duration: 1.5, ease: `easeInOut` },
         },
+        initial: {
+            y: 100,
+        },
+        animated: {
+            y: 0,
+            transition: { ease: "easeOut", duration: 0.6 }
+        }
     }
 
     // Header Subtext Delay
@@ -60,12 +67,13 @@ export default function HeaderContent({ backgroundDark, backgroundOpacity, setBa
     return (
         <Container>
             <motion.div
-                animate={{ y: -100 }}
-                transition={{ ease: "easeOut", duration: 0.6 }}
+                initial="initial"
+                animate="animated"
                 className="title-brand"
+                variants={variants}
                 style={{
                     position: "relative",
-                    top: 100,
+                    // top: 100,
                     opacity: opacity,
                     transition: "opacity 1500ms 1500ms",
                 }}
