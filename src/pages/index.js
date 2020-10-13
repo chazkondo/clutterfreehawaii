@@ -25,7 +25,7 @@ function Index() {
     const [borderVisible, setBorderVisible] = React.useState(false)
     const [backgroundDark, setBackgroundDark] = React.useState(false)
     const [nightModeClicked, setNightModeClicked] = React.useState(false)
-    const [isLoading, setIsLoading] = React.useState(true)
+    // const [isLoading, setIsLoading] = React.useState(true)
     const [jumpEffect, toggleJumpEffect] = React.useState(``)
 
     function toggleMode() {
@@ -62,12 +62,10 @@ function Index() {
         const hours = new Date().getHours()
         const isDayTime = hours > 6 && hours < 18
         setBackgroundDark(!isDayTime)
-        setIsLoading(false)
+        // setIsLoading(false)
     }, [])
 
-    return isLoading ? (
-        <div>loading</div>
-    ) : (
+    return (
         <>
             <IndexNavbar showProgressBar backgroundDark={backgroundDark} />
             <IndexHeader backgroundDark={backgroundDark} />
