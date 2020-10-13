@@ -58,7 +58,7 @@ function Index() {
         }
     }, [nightModeClicked])
 
-    React.useEffect(() => {
+    React.useLayoutEffect(() => {
         const hours = new Date().getHours()
         const isDayTime = hours > 6 && hours < 18
         setBackgroundDark(!isDayTime)
