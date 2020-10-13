@@ -74,6 +74,7 @@ function IndexHeader({ backgroundDark }) {
                 />
                 <BackgroundImage
                     Tag="section"
+                    loading="eager"
                     className="page-header section-dark"
                     style={{
                         position: "absolute",
