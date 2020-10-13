@@ -1578,6 +1578,7 @@ h6 {
     display: block
     }
 
+
 @media (max-width: 768px) {
     .aes {
         display: none
@@ -1602,13 +1603,16 @@ h6 {
         flex-direction: column-reverse
     }
     .section1 {
-        height: 630px;
+        height: 660px;
     }
     .section1Dark {
-        height: 630px;
+        height: 660px;
     }
     .SectionImages {
         width: 80%
+    }
+    .balanceSpan1 {
+        display: none
     }
     .balanceSpan2 {
         display: none
@@ -1619,9 +1623,29 @@ h6 {
     .textUnderlineDiv {
          margin-Left: 7.5%;
     }
+    .headerSpan {
+        width: 200px !important;
+        height: 35px !important;
+    }
+    .presentation-subtitle2 {
+        display: none
+    }
+    .presentation-subtitle3 {
+        display: none
+    }
+    .lightButton {
+        font-size: 2.5rem;
+        margin-right: 20px
+    }
   }
 
   @media (max-width: 500px) {
+    .section1 {
+        height: 630px;
+    }
+    .section1Dark {
+        height: 630px;
+    }
     .balanceSpan1 {
         display: block
     }

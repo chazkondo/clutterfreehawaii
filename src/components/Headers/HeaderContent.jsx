@@ -78,10 +78,11 @@ export default function HeaderContent({ backgroundDark, backgroundOpacity, setBa
                     transition: "opacity 1500ms 1500ms",
                 }}
             >
-                <h1 className={backgroundDark ? "presentation-title" : "presentation-title"}>
+                <h1 className="presentation-title">
                     Clutter Free Hawai'i
                 </h1>
                 <motion.span
+                    className="headerSpan"
                     variants={variants}
                     initial="hidden"
                     animate="visible"
@@ -92,7 +93,6 @@ export default function HeaderContent({ backgroundDark, backgroundOpacity, setBa
                         left: "73px",
                         bottom: "10px",
                         display: "block",
-                        width: "24px",
                         background: "rgba(16, 21, 16, 0.7)",
                         display: "block",
                         height: "57px",

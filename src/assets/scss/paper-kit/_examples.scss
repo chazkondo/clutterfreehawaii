@@ -215,6 +215,12 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+@media (max-width: 730px) {
+    .presentation-title {
+        font-size: 6em;
+    }
+}
+
 
 .presentation-title-light{
     font-size: 8em;
