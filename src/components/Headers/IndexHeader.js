@@ -45,8 +45,8 @@ function IndexHeader({ backgroundDark }) {
                     }
                     static2: file(relativePath: { eq: "rain3.png" }) {
                         childImageSharp {
-                            fixed(quality: 100, maxWidth: 1920) {
-                                ...GatsbyImageSharpFluid_withWebp
+                            fixed(quality: 100) {
+                                ...GatsbyImageSharpFixed_withWebp
                             }
                         }
                     }
