@@ -7,7 +7,7 @@ import { Divider } from "../Dividers/Divider.jsx"
 import HeaderContent from "../Headers/HeaderContent.jsx"
 
 // import zenBackground from "../../assets/img/creative-commons-zen.jpg"
-// import rainBackground from "../../assets/img/rain3.png"
+import rainBackground from "../../assets/img/rain3.png"
 
 // import BackgroundImage from "gatsby-background-image"
 // const HeaderContent = React.lazy(() => import("./HeaderContent"))
@@ -54,8 +54,9 @@ function IndexHeader({ backgroundDark }) {
             `}
             render={data => {
                 // Set ImageData.
+                console.log(data, "wat da shit is here")
                 const imageData = data.static.childImageSharp.fluid
-                const imageData2 = data.static2.childImageSharp.fluid
+                const imageData2 = data.static2.childImageSharp.fixed
                 return (
                     <>
                         <div
@@ -104,12 +105,17 @@ function IndexHeader({ backgroundDark }) {
                                 }}
                             ></div> */}
                             {backgroundDark && (
-                                <BackgroundImage
+                                <div
                                     // Tag="section"
                                     className="rain"
-                                    style={{ position: "absolute" }}
-                                    fluid={imageData2}
-                                ></BackgroundImage>
+                                    style={{
+                                        // position: "absolute",
+                                        // width: "100%",
+                                        // height: "100%",
+                                        background: `url(${rainBackground})`,
+                                    }}
+                                    fixed={imageData2}
+                                ></div>
                             )}
                             <div
                                 className={
