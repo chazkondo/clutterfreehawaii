@@ -27,15 +27,8 @@ function IndexHeader({ backgroundDark }) {
             query {
                 static: file(relativePath: { eq: "creative-commons-zen.jpg" }) {
                     childImageSharp {
-                        fluid(quality: 90, maxWidth: 1920) {
+                        fluid(quality: 45, maxWidth: 1920) {
                             ...GatsbyImageSharpFluid_withWebp
-                        }
-                    }
-                }
-                static2: file(relativePath: { eq: "rain3.png" }) {
-                    childImageSharp {
-                        fixed(quality: 100) {
-                            ...GatsbyImageSharpFixed_withWebp
                         }
                     }
                 }
@@ -44,7 +37,6 @@ function IndexHeader({ backgroundDark }) {
     )
 
     const imageData = data.static.childImageSharp.fluid
-    const imageData2 = data.static2.childImageSharp.fixed
 
     // const [mybackground, setMybackground] = React.useState(
     //     `url(${zenBackground})`
@@ -103,7 +95,6 @@ function IndexHeader({ backgroundDark }) {
                             ></div> */}
                 {backgroundDark && (
                     <div
-                        // Tag="section"
                         className="rain"
                         style={{
                             // position: "absolute",
@@ -111,7 +102,6 @@ function IndexHeader({ backgroundDark }) {
                             // height: "100%",
                             background: `url(${rainBackground})`,
                         }}
-                        fixed={imageData2}
                     ></div>
                 )}
                 <div className={backgroundDark ? "filter" : "filterLight"} />
