@@ -21,6 +21,7 @@ function IndexHeader({ backgroundDark }) {
     const [play, pressPlay] = React.useState(false)
     const [backgroundOpacity, setBackgroundOpacity] = React.useState(0.94)
     const [groundZeroOpacity, setGroundZeroOpacity] = React.useState(1)
+    const [ready, setReady] = React.useState(false)
 
     const data = useStaticQuery(
         graphql`
@@ -32,6 +33,7 @@ function IndexHeader({ backgroundDark }) {
                                 color: "rgba(91,110,68,0.4)"
                                 turnPolicy: TURNPOLICY_MINORITY
                                 blackOnWhite: false
+                                turdSize: 2
                                 background: "rgba(0,0,0,0.9)"
                             }
                             quality: 45
@@ -95,8 +97,7 @@ function IndexHeader({ backgroundDark }) {
                         transition: "opacity 3s linear",
                     }}
                     fluid={imageData}
-                    durationFadeIn={1000000}
-                    fadeIn={true}
+                    onLoad={() => setReady(true)}
                 ></BackgroundImage>
                 {/* <div
                                 className="page-header section-dark"
@@ -120,17 +121,19 @@ function IndexHeader({ backgroundDark }) {
                     ></div>
                 )}
                 <div className={backgroundDark ? "filter" : "filterLight"} />
-                <div className="content-center">
-                    {/* <React.Suspense fallback={<div></div>}> */}
-                    <HeaderContent
-                        backgroundDark={backgroundDark}
-                        backgroundOpacity={backgroundOpacity}
-                        setBackgroundOpacity={setBackgroundOpacity}
-                        setGroundZeroOpacity={setGroundZeroOpacity}
-                        pressPlay={pressPlay}
-                    />
-                    {/* </React.Suspense> */}
-                </div>
+                {ready && (
+                    <div className="content-center">
+                        {/* <React.Suspense fallback={<div></div>}> */}
+                        <HeaderContent
+                            backgroundDark={backgroundDark}
+                            backgroundOpacity={backgroundOpacity}
+                            setBackgroundOpacity={setBackgroundOpacity}
+                            setGroundZeroOpacity={setGroundZeroOpacity}
+                            pressPlay={pressPlay}
+                        />
+                        {/* </React.Suspense> */}
+                    </div>
+                )}
                 <Divider />
             </div>
         </>
