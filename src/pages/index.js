@@ -56,7 +56,7 @@ function Index() {
             clearTimeout(initialTimeout)
             clearTimeout(setJumpInterval)
         }
-    }, [nightModeClicked])
+    }, [])
 
     React.useLayoutEffect(() => {
         const hours = new Date().getHours()
