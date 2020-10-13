@@ -29,7 +29,7 @@ function IndexHeader({ backgroundDark }) {
                     childImageSharp {
                         fluid(
                             traceSVG: {
-                                color: "#f00e2e"
+                                color: "rgba(91,110,68,0.4)"
                                 turnPolicy: TURNPOLICY_MINORITY
                                 blackOnWhite: true
                             }
@@ -37,6 +37,9 @@ function IndexHeader({ backgroundDark }) {
                             maxWidth: 1920
                         ) {
                             ...GatsbyImageSharpFluid_withWebp
+                            src
+                            srcSet
+                            tracedSVG
                         }
                     }
                 }
