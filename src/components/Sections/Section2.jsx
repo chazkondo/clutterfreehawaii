@@ -98,6 +98,7 @@ function Section2({ setBorderVisible, backgroundDark }) {
                     justifyContent: 'center',
                     alignContent: 'center',
                     alignItems: 'center',
+                    // backgroundColor: 'yellow'
                 }}
                 className={backgroundDark ? "section1Dark" : "section1"}>
                 <div className={backgroundDark ? "sectionOverlayDark" : "sectionOverlay"} />
@@ -106,42 +107,17 @@ function Section2({ setBorderVisible, backgroundDark }) {
                     justifyContent: 'center',
                     alignContent: 'center',
                     alignItems: 'center', textAlign: 'center',
+                    height: '100%'
                 }}>
-                    <div
-                        style={{
-                            display: 'flex',
-                            flexDirection: 'row',
-                            justifyItems: 'center',
-                            justifyContent: 'center',
-                            alignContent: 'center',
-                            alignItems: 'center',
-                            height: '100%',
-                            width: '90%',
-                        }}>
-                        <div style={{
-                            width: '100%', height: '100%', display: 'flex',
-                            flexDirection: 'column',
-                            justifyItems: 'center',
-                            justifyContent: 'center',
-                            // alignContent: 'center',
-                            alignItems: 'center',
-                            // backgroundColor: 'purple'
-                        }}>
+                    <div className="SectionContainers">
+                        <div className="SectionImages">
                             <motion.img
                                 animate={headerDetected ? 'unfadedFaster' : 'faded'}
                                 variants={variants}
                                 style={{ width: '100%' }} src={
                                     require("../../assets/img/design6.png")} alt="" />
                         </div>
-                        <div style={{
-                            // backgroundColor: 'pink',
-                            textAlign: 'left', width: '100%', height: '100%', display: 'flex',
-                            flexDirection: 'column',
-                            justifyItems: 'center',
-                            justifyContent: 'center',
-                            // alignContent: 'center',
-                            alignItems: 'center',
-                        }}>
+                        <div className="SectionTextContainers">
                             <div style={{
                                 // backgroundColor: 'blue',
                                 width: '100%', height: '100%', display: 'flex',
@@ -151,16 +127,18 @@ function Section2({ setBorderVisible, backgroundDark }) {
                                 // alignContent: 'center',
                                 alignItems: 'center',
                             }}>
-                                <span style={{
-                                    content: ' ',
-                                    // backgroundColor: 'green',
-                                    width: '10%', height: '100 % ',
-                                    flexDirection: 'row',
-                                    justifyItems: 'center',
-                                    justifyContent: 'center',
-                                    // alignContent: 'center',
-                                    alignItems: 'center',
-                                }}></span>
+                                <span
+                                    className="balanceSpan2"
+                                    style={{
+                                        content: ' ',
+                                        // backgroundColor: 'green',
+                                        width: '10%', height: '100 % ',
+                                        flexDirection: 'row',
+                                        justifyItems: 'center',
+                                        justifyContent: 'center',
+                                        // alignContent: 'center',
+                                        alignItems: 'center',
+                                    }}></span>
                                 <div style={{
                                     content: ' ',
                                     // backgroundColor: 'red',
@@ -179,7 +157,7 @@ function Section2({ setBorderVisible, backgroundDark }) {
                                         animate={headerDetected ? 'unfadedFaster' : 'faded'} variants={variants}
                                         style={{ color: backgroundDark ? 'white' : 'black', letterSpacing: '-0.28rem', paddingTop: '1.5%', marginTop: 0, paddingBottom: '10%' }}>Design-Inspired.</motion.h2>
                                     <h5 style={{ color: backgroundDark ? 'white' : 'black' }} >At Clutter Free Hawai’i, our passion is to contribute to a unique and sustainable island community. We strive to be the innovative leader in the industries we serve, creating strong relationships with our valued clients and giving forward to the community.</h5>
-                                    <div style={{ content: '', marginTop: '10%', width: '85%', height: '3px', background: 'rgba(221, 238, 211, 0.6)' }} />
+                                    <div className="textUnderlineDiv" />
                                 </div>
                             </div>
                         </div>
