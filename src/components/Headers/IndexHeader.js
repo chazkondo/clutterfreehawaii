@@ -83,7 +83,7 @@ function IndexHeader({ backgroundDark }) {
                         transition: "opacity 3s linear",
                     }}
                     fluid={imageData}
-                ></BackgroundImage>
+                />
                 {/* <div
                                 className="page-header section-dark"
                                 style={{
