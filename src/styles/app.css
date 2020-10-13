@@ -1300,7 +1300,7 @@ h6 {
   .section1 {
       position: relative;
       z-index: 0;
-      height: 70vh;
+      height: 550px;
       /* overflow: hidden */
   }
 
@@ -1323,7 +1323,7 @@ h6 {
 .section1Dark {
     position: relative;
     z-index: 0;
-    height: 70vh;
+    height: 550px;
     /* overflow: hidden */
 }
 
@@ -1412,7 +1412,7 @@ h6 {
 .divider {
     content: '';
     width: 100%;
-    height: 3.5vh;
+    height: 26px;
     position: absolute;
     background-color: rgba(221, 238, 211, 0.9);
     z-index: 100000;
@@ -1421,7 +1421,7 @@ h6 {
 .dividerDark {
     content: '';
     width: 100%;
-    height: 3.5vh;
+    height: 26px;
     position: absolute;
     background-color: rgb(182, 197, 172, 0.9);
     z-index: 100000;
@@ -1534,7 +1534,7 @@ h6 {
         display: none
     }
     .section1Container {
-        padding-top: 10vh !important;
+        padding-top: 100px !important;
     }
     .section1Divider {
         top: 16%;

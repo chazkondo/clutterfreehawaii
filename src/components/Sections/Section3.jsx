@@ -284,10 +284,13 @@ function Section3({ backgroundDark }) {
         <>
             {!function2WasFired && detectingHeader()}
             <div
-                className={backgroundDark ? "section1Dark" : "section1"}
                 style={{
-                    height: '70vh',
-                }}>
+                    display: 'flex', justifyItems: 'center',
+                    justifyContent: 'center',
+                    alignContent: 'center',
+                    alignItems: 'center',
+                }}
+                className={backgroundDark ? "section1Dark" : "section1"}>
                 {/* <span style={{ position: 'absolute', top: '0px', left: '0%', width: '100%', height: '7.5px', background: 'rgba(0,0,0, 0.02)' }} /> */}
                 <motion.svg
                     variants={variants}
@@ -325,7 +328,7 @@ function Section3({ backgroundDark }) {
                     display: 'flex', justifyItems: 'center',
                     justifyContent: 'center',
                     alignContent: 'center',
-                    alignItems: 'center', textAlign: 'center', paddingTop: '0%', marginTop: '0%',
+                    alignItems: 'center', textAlign: 'center',
                 }}>
                     <div
                         style={{
@@ -335,7 +338,7 @@ function Section3({ backgroundDark }) {
                             justifyContent: 'center',
                             alignContent: 'center',
                             alignItems: 'center',
-                            height: '70vh',
+                            height: '100%',
                             width: '90%',
                             // backgroundColor: 'purple'
                         }}>

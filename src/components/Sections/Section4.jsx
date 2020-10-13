@@ -287,8 +287,12 @@ function Section4({ backgroundDark }) {
             <div
                 className={backgroundDark ? "section1Dark" : "section1"}
                 style={{
-                    height: '70vh',
-                }}>
+                    display: 'flex', justifyItems: 'center',
+                    justifyContent: 'center',
+                    alignContent: 'center',
+                    alignItems: 'center',
+                }}
+            >
                 <motion.svg
                     variants={variants}
                     initial="faded"
@@ -325,7 +329,7 @@ function Section4({ backgroundDark }) {
                     display: 'flex', justifyItems: 'center',
                     justifyContent: 'center',
                     alignContent: 'center',
-                    alignItems: 'center', textAlign: 'center', paddingTop: '0%', marginTop: '0%',
+                    alignItems: 'center', textAlign: 'center',
                 }}>
                     <div
                         style={{
@@ -335,7 +339,7 @@ function Section4({ backgroundDark }) {
                             justifyContent: 'center',
                             alignContent: 'center',
                             alignItems: 'center',
-                            height: '70vh',
+                            height: '100%',
                             width: '90%',
                             // backgroundColor: 'purple'
                         }}>
