@@ -27,7 +27,15 @@ function IndexHeader({ backgroundDark }) {
             query {
                 static: file(relativePath: { eq: "creative-commons-zen.jpg" }) {
                     childImageSharp {
-                        fluid(quality: 45, maxWidth: 1920) {
+                        fluid(
+                            traceSVG: {
+                                color: "#f00e2e"
+                                turnPolicy: TURNPOLICY_MINORITY
+                                blackOnWhite: true
+                            }
+                            quality: 45
+                            maxWidth: 1920
+                        ) {
                             ...GatsbyImageSharpFluid_withWebp
                         }
                     }
