@@ -158,6 +158,12 @@ function Section2({ setBorderVisible, backgroundDark }) {
                                         style={{ color: backgroundDark ? 'white' : 'black', letterSpacing: '-0.28rem', paddingTop: '1.5%', marginTop: 0, paddingBottom: '10%' }}>Design-Inspired.</motion.h2>
                                     <h5 style={{ color: backgroundDark ? 'white' : 'black' }} >At Clutter Free Hawai’i, our passion is to contribute to a unique and sustainable island community. We strive to be the innovative leader in the industries we serve, creating strong relationships with our valued clients and giving forward to the community.</h5>
                                     <div className="textUnderlineDiv" />
+                                    <div
+                                        className="balanceSpan1"
+                                        style={{
+                                            content: ' ',
+                                            height: '50px',
+                                        }} />
                                 </div>
                             </div>
                         </div>

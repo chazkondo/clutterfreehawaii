@@ -1535,7 +1535,7 @@ h6 {
     align-items: center;
     height: 100%;
     width: 90%;
-    /* background-color: red */
+    /* background-color: green */
   }
 
   .SectionImages {
@@ -1545,9 +1545,9 @@ h6 {
     flex-direction: column;
     justify-items: center;
     justify-content: center;
-    /* alignContent: center; */
+    /* align-Content: center; */
     align-items: center;
-    /* backgroundColor: purple */
+    /* background-color: purple */
   }
 
   .SectionTextContainers {
@@ -1559,6 +1559,7 @@ h6 {
     justify-items: center;
     justify-content: center;
     align-items: center;
+    /* background-color: pink */
   }
 
   .textUnderlineDiv {
@@ -1569,9 +1570,13 @@ h6 {
      background: rgba(221, 238, 211, 0.6)
   }
 
+  .balanceSpan1 {
+    display: none
+    }
+
   .balanceSpan2 {
     display: block
-}
+    }
 
 @media (max-width: 768px) {
     .aes {
@@ -1597,10 +1602,10 @@ h6 {
         flex-direction: column-reverse
     }
     .section1 {
-        height: 660px;
+        height: 630px;
     }
     .section1Dark {
-        height: 660px;
+        height: 630px;
     }
     .SectionImages {
         width: 80%
@@ -1613,5 +1618,11 @@ h6 {
     }
     .textUnderlineDiv {
          margin-Left: 7.5%;
+    }
+  }
+
+  @media (max-width: 500px) {
+    .balanceSpan1 {
+        display: block
     }
   }
