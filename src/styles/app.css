@@ -1638,6 +1638,21 @@ h6 {
         margin-right: 20px;
         bottom: 5% !important;
     }
+    .divider {
+        height: 85px
+    }
+    .dividerDark {
+        height: 85px
+    }
+    .section1Header {
+        font-size: 11px !important
+    }
+    .section1Caption {
+        font-size: 23px !important
+    }
+    .section1CaptionDark {
+        font-size: 23px !important
+    }
   }
 
   @media (max-width: 500px) {

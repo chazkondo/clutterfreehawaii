@@ -156,7 +156,7 @@ function Section1({ backgroundDark, borderVisible }) {
                             <path d="m8183 2474c-89-200-52-362 71-310 66 28 71 121 15 266-47 123-50 124-86 44z" />
                         </g>
                     </svg>
-                    <div style={{
+                    <div className="section1Header" style={{
                         display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gridTemplateRows: '1fr', gridGap: 0, columnGap: 0, margin: '0 auto',
                         padding: 0
                     }}>
