@@ -1635,7 +1635,8 @@ h6 {
     }
     .lightButton {
         font-size: 24px !important;
-        margin-right: 20px
+        margin-right: 20px;
+        bottom: 5% !important;
     }
   }
 

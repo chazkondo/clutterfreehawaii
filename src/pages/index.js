@@ -82,6 +82,7 @@ function Index() {
                 <Section4 backgroundDark={backgroundDark} />
                 {/* <Section5 backgroundDark={backgroundDark} /> */}
                 <span
+                    className="lightButton"
                     onClick={() => toggleMode()}
                     style={{
                         cursor: `pointer`,
@@ -107,7 +108,7 @@ function Index() {
                             }}
                         >
                             <FontAwesomeIcon
-                                className="overlap lightButton"
+                                className="overlap"
                                 style={{
                                     filter: `drop-shadow(1px 1px 1px #000000)`,
                                     transform: `rotate(-10deg)`,
@@ -118,7 +119,7 @@ function Index() {
                                 opacity={0.5}
                             />
                             <FontAwesomeIcon
-                                className="overlap lightButton"
+                                className="overlap"
                                 style={{
                                     position: `relative`,
                                     right: `10%`,
@@ -143,7 +144,7 @@ function Index() {
                             }}
                         >
                             <FontAwesomeIcon
-                                className="overlap lightButton"
+                                className="overlap"
                                 style={{
                                     filter: `drop-shadow(1px 1px 1px #000000)`,
                                     // transform: `scaleX(-1)`,
@@ -155,7 +156,7 @@ function Index() {
                                 opacity={0.5}
                             />
                             <FontAwesomeIcon
-                                className="overlap lightButton"
+                                className="overlap"
                                 style={{
                                     filter: `drop-shadow(1px 1px 1px #ffffff)`,
                                     position: `relative`,
