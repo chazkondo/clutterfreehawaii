@@ -6,6 +6,10 @@ import { Video } from "../Video/Video.jsx"
 import { Divider } from "../Dividers/Divider.jsx"
 import HeaderContent from "../Headers/HeaderContent.jsx"
 
+import zenBackground from "../../assets/img/creative-commons-zen.jpg"
+import rainBackground from "../../assets/img/rain3.png"
+
+// import BackgroundImage from "gatsby-background-image"
 // const HeaderContent = React.lazy(() => import("./HeaderContent"))
 
 function IndexHeader({ backgroundDark }) {
@@ -14,19 +18,12 @@ function IndexHeader({ backgroundDark }) {
     const [groundZeroOpacity, setGroundZeroOpacity] = React.useState(1)
 
     const [mybackground, setMybackground] = React.useState(
-        "url(" + require("../../assets/img/creative-commons-zen.jpg") + ")"
+        `url(${zenBackground})`
     )
 
     React.useLayoutEffect(() => {
-        setMybackground(
-            "url(" + require("../../assets/img/creative-commons-zen.jpg") + ")"
-        )
+        setMybackground(`url(${zenBackground})`)
     })
-
-    console.log(
-        backgroundDark,
-        "IS THIS UNDEFINED??!!?!? from inside index header"
-    )
 
     return (
         <>
@@ -68,10 +65,7 @@ function IndexHeader({ backgroundDark }) {
                     <div
                         className="rain"
                         style={{
-                            backgroundImage:
-                                "url(" +
-                                require("../../assets/img/rain3.png") +
-                                ")",
+                            backgroundImage: `url(${rainBackground})`,
                         }}
                     />
                 )}
