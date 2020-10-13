@@ -31,7 +31,8 @@ function IndexHeader({ backgroundDark }) {
                             traceSVG: {
                                 color: "rgba(91,110,68,0.4)"
                                 turnPolicy: TURNPOLICY_MINORITY
-                                blackOnWhite: true
+                                blackOnWhite: false
+                                background: "rgba(0,0,0,0.9)"
                             }
                             quality: 45
                             maxWidth: 1920
@@ -94,6 +95,8 @@ function IndexHeader({ backgroundDark }) {
                         transition: "opacity 3s linear",
                     }}
                     fluid={imageData}
+                    durationFadeIn={1000000}
+                    fadeIn={true}
                 ></BackgroundImage>
                 {/* <div
                                 className="page-header section-dark"
