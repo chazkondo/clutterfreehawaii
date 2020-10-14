@@ -129,12 +129,12 @@ function Section1({ backgroundDark, borderVisible }) {
         <>
             {toggleHighlightsOn()}
             <span ref={exitRef} />
-            <div className={backgroundDark ? "section1Dark" : "section1"}>
+            <div className={backgroundDark ? "section1Dark balanceDiv" : "section1 balanceDiv"}>
                 <div className={backgroundDark ? "sectionOverlayDark" : "sectionOverlay"} />
                 <div className={backgroundDark ? "dividerDark" : "divider"} />
 
                 <Container className="section1Container" style={{ textAlign: 'center', paddingTop: '8.5%', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
-                    <svg style={{ fill: backgroundDark ? 'lightgreen' : 'green', position: 'absolute', bottom: '8%', opacity: backgroundDark ? 0.1 : 0.11, zIndex: backgroundDark ? '0' : '-3' }} width="100%" height="640pt" version="1.0" viewBox="0 0 1280 640" xmlns="http://www.w3.org/2000/svg">
+                    <svg className="topSVG" style={{ fill: backgroundDark ? 'lightgreen' : 'green', position: 'absolute', bottom: '8%', opacity: backgroundDark ? 0.1 : 0.11, zIndex: backgroundDark ? '0' : '-3' }} width="100%" height="640pt" version="1.0" viewBox="0 0 1280 640" xmlns="http://www.w3.org/2000/svg">
                         <g transform="matrix(.1 0 0 -.1 1.1668 610.83)">
                             <path d="m5668 4220c-29-29-30-34-26-94 6-95 34-132 147-190 82-42 116-49 75-16-8 8-27 33-41 57-23 40-25 49-18 122 8 89 0 113-45 136-42 22-58 19-92-15z" />
                             <path d="m7033 4231c-41-25-46-45-38-139 8-87-1-117-49-161-47-44-27-43 65 5 113 58 141 95 147 190 4 60 3 65-26 94-35 35-55 37-99 11z" />
@@ -244,7 +244,7 @@ function Section1({ backgroundDark, borderVisible }) {
                     variants={variants}
                     initial="faded"
                     animate={backgroundDark ? borderVisible ? "lessFaded2" : "fadedTransition" : borderVisible ? "lessFaded" : "fadedTransition"}
-                    className="section1Divider1"
+                    className="section1Divider1 bottomSVG"
                     style={{ zIndex: backgroundDark ? '0' : '-2' }}
                     width="100%" height="640pt" version="1.0" viewBox="0 0 1280 640" xmlns="http://www.w3.org/2000/svg">
                     <g
@@ -276,7 +276,7 @@ function Section1({ backgroundDark, borderVisible }) {
                     variants={variants}
                     initial="faded"
                     animate={backgroundDark ? borderVisible ? "lessFaded2" : "fadedTransition" : borderVisible ? "lessFaded" : "fadedTransition"}
-                    className="section1Divider2"
+                    className="section1Divider2 bottomSVG"
                     style={{ zIndex: backgroundDark ? '0' : '-2' }}
                     width="100%" height="640pt" version="1.0" viewBox="0 0 1280 640" xmlns="http://www.w3.org/2000/svg">
                     <g
