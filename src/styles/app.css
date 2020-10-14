@@ -1578,7 +1578,15 @@ h6 {
     display: block
     }
 
+    .headerRef {
+        position: absolute;
+        top: 50% 
+    }
+
 @media (max-width: 768px) {
+    .headerRef {
+        top: 25% 
+    }
     .aes {
         display: none
     }
@@ -1659,7 +1667,13 @@ h6 {
         bottom: 30px !important;
     }
     .bottomSVG {
-        top: 55px !important;
+        top: 45px !important;
+    }
+  }
+
+  @media (max-width: 700px) {
+    .bottomSVG {
+        top: 65px !important;
     }
   }
 
@@ -1681,6 +1695,9 @@ h6 {
     }
     .section1CaptionDark {
         font-size: 20px !important
+    }
+    .bottomSVG {
+        top: 60px !important;
     }
   }
 

@@ -354,7 +354,6 @@ function Section3({ backgroundDark }) {
                                         animate={headerDetected ? 'unfadedFaster' : 'faded'} variants={variants}
                                         style={{ color: backgroundDark ? 'white' : 'black', paddingBottom: 0, marginBottom: 0, fontSize: '1.7rem', letterSpacing: '4px' }}>Clutter Removal</motion.h3>
                                     <motion.h2
-                                        ref={headerRef}
                                         animate={headerDetected ? 'unfadedFaster' : 'faded'} variants={variants}
                                         style={{ color: backgroundDark ? 'white' : 'black', letterSpacing: '-0.28rem', paddingTop: '1.5%', marginTop: 0, paddingBottom: '10%' }}>Purpose-Driven.</motion.h2>
                                     <h5 style={{ color: backgroundDark ? 'white' : 'black' }} >At Clutter Free Hawai’i, our passion is to contribute to a unique and sustainable island community. We strive to be the innovative leader in the industries we serve, creating strong relationships with our valued clients and giving forward to the community.</h5>
@@ -388,6 +387,7 @@ function Section3({ backgroundDark }) {
                                     require("../../assets/img/clutterfree.png")} alt="" />
                         </div>
                     </div>
+                    <div className="headerRef" ref={headerRef} />
                 </div>
             </div>
             <span ref={endRef} />
