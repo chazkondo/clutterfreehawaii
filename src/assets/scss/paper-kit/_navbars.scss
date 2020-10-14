@@ -84,10 +84,14 @@
     }
     .navbar-collapse{
         & .nav-item{
+          p{
+            color: rgba(39, 39, 39, 0.9) !important;
+          }
             & .nav-link{
                 p{
                     display: inline;
                     text-transform: uppercase;
+                    color: rgba(39, 39, 39, 0.9) !important;
                 }
             }
             & .dropdown-item{
@@ -230,9 +234,13 @@
   }
   .navbar-collapse{
     & .nav-item{
+        p{
+          color: rgba(255, 255, 255, 0.9) !important;
+        }
         & .nav-link{
             p{
                 display: inline;
+                color: rgba(255, 255, 255, 0.9) !important;
             }
         }
         & .dropdown-item {
