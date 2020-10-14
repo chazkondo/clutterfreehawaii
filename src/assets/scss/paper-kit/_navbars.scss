@@ -35,7 +35,7 @@
     &:not([class*="bg"]) {
       .navbar-toggler {
         .navbar-toggler-bar {
-          background: green !important;
+          background: rgba(17, 17, 17, 0.8) !important;
         }
       }
     }
@@ -208,6 +208,13 @@
     .nav-item .nav-link {
         color: $white-color;
      }
+  }
+  &:not([class*="bg"]) {
+    .navbar-toggler {
+      .navbar-toggler-bar {
+        background: rgba(255, 255, 255, 1) !important;
+      }
+    }
   }
   .navbar-brand {
     color: $white-color;
