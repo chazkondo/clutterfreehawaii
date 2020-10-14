@@ -219,6 +219,7 @@ function IndexNavbar(props) {
                                                     icon={[`fab`, `twitter`]}
                                                 />
                                                 <p className="d-lg-none">
+                                                    {` `}
                                                     Twitter
                                                 </p>
                                             </NavLink>
@@ -235,6 +236,7 @@ function IndexNavbar(props) {
                                                     icon={[`fab`, `facebook`]}
                                                 />
                                                 <p className="d-lg-none">
+                                                    {` `}
                                                     Facebook
                                                 </p>
                                             </NavLink>
@@ -251,6 +253,7 @@ function IndexNavbar(props) {
                                                     icon={[`fab`, `instagram`]}
                                                 />
                                                 <p className="d-lg-none">
+                                                    {` `}
                                                     Instagram
                                                 </p>
                                             </NavLink>
@@ -267,6 +270,7 @@ function IndexNavbar(props) {
                                                     icon={[`fab`, `youtube`]}
                                                 />
                                                 <p className="d-lg-none">
+                                                    {` `}
                                                     Youtube
                                                 </p>
                                             </NavLink>

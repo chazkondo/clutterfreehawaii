@@ -87,6 +87,7 @@
             & .nav-link{
                 p{
                     display: inline;
+                    text-transform: none;
                 }
             }
             & .dropdown-item{
@@ -106,6 +107,7 @@
         &.show{
             & .navbar-nav{
                 & .nav-item .nav-link{
+                  // text-transform: none;
                     padding-right: 10px;
                     color: rgba(17, 17, 17, 0.7) !important;
                 }
@@ -212,6 +214,7 @@
 
 .darkmode {
   background: rgba(17, 17, 17, 0.8) !important;
+  box-shadow: 0 6px 10px -4px rgba(255, 255, 255, 0.15);
   .navbar-nav {
     .nav-item .nav-link {
         color: $white-color;
