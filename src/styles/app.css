@@ -1642,10 +1642,10 @@ h6 {
         bottom: 5% !important;
     }
     .divider {
-        height: 60px
+        height: 30px
     }
     .dividerDark {
-        height: 60px
+        height: 30px
     }
     .section1Header {
         font-size: 11px !important
@@ -1657,7 +1657,7 @@ h6 {
         font-size: 23px !important
     }
     .topSVG {
-        bottom: 10px !important;
+        bottom: 30px !important;
     }
     .bottomSVG {
         top: 100px !important;
@@ -1673,5 +1673,14 @@ h6 {
     }
     .balanceSpan1 {
         display: block
+    }
+    .section1Header {
+        font-size: 8px !important
+    }
+    .section1Caption {
+        font-size: 20px !important
+    }
+    .section1CaptionDark {
+        font-size: 20px !important
     }
   }
