@@ -90,6 +90,7 @@
                 }
             }
             & .dropdown-item{
+              color: rgba(17, 17, 17, 0.7) !important;
                 i{
                     margin: 0 10px;
                     margin: 0 10px 0px 5px;
@@ -98,17 +99,24 @@
                     top: 3px;
                 }
             }
+            & .dropdown-item:hover {
+              color: rgba(17, 17, 17, 0.5) !important;
+            }
         }
         &.show{
             & .navbar-nav{
-                & .nav-item{
+                & .nav-item .nav-link{
                     padding-right: 10px;
+                    color: rgba(17, 17, 17, 0.7) !important;
+                }
+                & .nav-item:hover .nav-link:hover {
+                  color: rgba(17, 17, 17, 0.5) !important;
                 }
             }
         }
 
         &:after {
-          background-color: rgba(0,0,0,0.4);
+          background-color: rgba(255,255,255,1);
         }
     }
     #navbarSupportedContent{
@@ -149,7 +157,7 @@
 
       .navbar-nav {
         .nav-item .nav-link {
-          color: white !important;
+          color: white;
         }
       }
 
@@ -216,6 +224,43 @@
       }
     }
   }
+  .navbar-collapse{
+    & .nav-item{
+        & .nav-link{
+            p{
+                display: inline;
+            }
+        }
+        & .dropdown-item {
+          color: rgba(255, 255, 255, 0.9) !important;
+            i{
+                margin: 0 10px;
+                margin: 0 10px 0px 5px;
+                font-size: 18px;
+                position: relative;
+                top: 3px;
+            }
+        }
+        & .dropdown-item:hover {
+          color:  rgba(255, 255, 255, .4) !important
+        }
+    }
+    &.show{
+        & .navbar-nav{
+            & .nav-item .nav-link{
+                padding-right: 10px;
+                color: rgba(255, 255, 255, 0.9) !important;
+            }
+            & .nav-item:hover .nav-link:hover{
+              color:  rgba(255, 255, 255, .6) !important
+          }
+        }
+    }
+
+    &:after {
+      background-color: rgba(17, 17, 17, 0.8);
+    }
+}
   .navbar-brand {
     color: $white-color;
   }
