@@ -78,7 +78,7 @@ function IndexHeader({ backgroundDark }) {
                     className="page-header section-dark"
                     style={{
                         position: "absolute",
-                        backgroundColor: "rgba(255,255,255,1)",
+                        // backgroundColor: "rgba(255,255,255,1)",
                         opacity: backgroundOpacity,
                         transition: "opacity 3s linear",
                     }}

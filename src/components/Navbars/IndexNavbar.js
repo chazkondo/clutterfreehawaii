@@ -3,7 +3,6 @@ import React from "react"
 import classnames from "classnames"
 // reactstrap components
 import {
-    Progress,
     Collapse,
     Dropdown,
     DropdownItem,
