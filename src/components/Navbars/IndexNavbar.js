@@ -41,6 +41,7 @@ function IndexNavbar(props) {
     }
 
     const [navbarCollapse, setNavbarCollapse] = React.useState(false)
+    const [smDropdownOpen, setSmDropdownOpen] = React.useState(false)
     const [dropdownOpen, setDropdownOpen] = React.useState(false)
     const wrapperRef = React.useRef(null)
     const [readingProgress, setReadingProgress] = React.useState(0)
@@ -72,6 +73,7 @@ function IndexNavbar(props) {
     }
 
     const toggle = () => setDropdownOpen(!dropdownOpen)
+    const toggleSm = () => setSmDropdownOpen(!smDropdownOpen)
 
     const handleClickOutside = (event) => {
         console.log(
@@ -252,7 +254,7 @@ function IndexNavbar(props) {
                                                     size={`lg`}
                                                     icon={[`fab`, `instagram`]}
                                                 />
-                                                <p className="d-lg-none">
+                                                <p className="d-lg-none d-md-none">
                                                     {` `}
                                                     Instagram
                                                 </p>
@@ -285,6 +287,25 @@ function IndexNavbar(props) {
                                                 Contact
                                             </NavLink>
                                         </NavItem>
+                                        <Dropdown
+                                            className="d-lg-none"
+                                            nav
+                                            isOpen={smDropdownOpen}
+                                            toggle={toggleSm}
+                                        >
+                                            <DropdownToggle nav caret>
+                                                Social Media
+                                            </DropdownToggle>
+                                            <DropdownMenu>
+                                                <DropdownItem
+                                                    data-placement="bottom"
+                                                    href="/blog"
+                                                    title="Blog Posts"
+                                                >
+                                                    All Posts
+                                                </DropdownItem>
+                                            </DropdownMenu>
+                                        </Dropdown>
                                         <Dropdown
                                             nav
                                             isOpen={dropdownOpen}

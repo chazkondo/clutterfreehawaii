@@ -519,12 +519,6 @@
         width: auto;
         height: auto;
 
-        .dropdown-item:hover,
-        .dropdown-item:focus{
-            background-color: transparent;
-            border-radius:0;
-        }
-
         .dropdown-item a{
 
             &:hover,
