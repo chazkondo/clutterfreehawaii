@@ -1578,14 +1578,13 @@ h6 {
     display: block
     }
 
-
 @media (max-width: 768px) {
-    /* .aes {
+    .aes {
         display: none
     }
     .act {
         display: none
-    } */
+    }
     .section1Container {
         padding-top: 150px !important;
     }
@@ -1637,7 +1636,7 @@ h6 {
         display: none
     }
     .lightButton {
-        font-size: 24px !important;
+        font-size: 20px !important;
         margin-right: 10px;
         bottom: 5% !important;
     }
@@ -1660,7 +1659,7 @@ h6 {
         bottom: 30px !important;
     }
     .bottomSVG {
-        top: 40px !important;
+        top: 55px !important;
     }
   }
 
