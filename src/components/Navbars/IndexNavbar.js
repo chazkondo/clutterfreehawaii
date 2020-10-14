@@ -212,16 +212,55 @@ function IndexNavbar(props) {
                                         })}
                                         navbar
                                     >
-                                        <div
-                                            onClick={() => changeTier(0)}
-                                            className={
-                                                tier === 1
-                                                    ? ``
-                                                    : `d-none d-lg-block`
-                                            }
+                                        <NavItem
+                                            className="d-lg-none"
+                                            style={{
+                                                display:
+                                                    tier === 0
+                                                        ? `block`
+                                                        : `none`,
+                                            }}
                                         >
-                                            {`< Back`}
-                                        </div>
+                                            <NavLink disabled href="#">
+                                                Main Menu
+                                                <hr />
+                                            </NavLink>
+                                        </NavItem>
+                                        <NavItem
+                                            header
+                                            className="d-lg-none"
+                                            style={{
+                                                display:
+                                                    tier !== 0
+                                                        ? `block`
+                                                        : `none`,
+                                            }}
+                                        >
+                                            <NavLink
+                                                style={{ cursor: `pointer` }}
+                                                target="_blank"
+                                                onClick={() => {
+                                                    changeTier(0)
+                                                }}
+                                                data-placement="bottom"
+                                                title="Follow us on Instagram"
+                                            >
+                                                Back
+                                                <hr />
+                                            </NavLink>
+                                        </NavItem>
+                                        {tier === 1 && (
+                                            <NavItem>
+                                                <p
+                                                    style={{
+                                                        fontSize: `1em`,
+                                                        opacity: 0.8,
+                                                    }}
+                                                >
+                                                    Social Media
+                                                </p>
+                                            </NavItem>
+                                        )}
                                         <NavItem
                                             className={
                                                 tier === 1
@@ -285,7 +324,7 @@ function IndexNavbar(props) {
                                                     size={`lg`}
                                                     icon={[`fab`, `instagram`]}
                                                 />
-                                                <p className="d-lg-none d-md-none d-sm-none">
+                                                <p className="d-lg-none">
                                                     {` `}
                                                     Instagram
                                                 </p>
@@ -314,9 +353,76 @@ function IndexNavbar(props) {
                                                 </p>
                                             </NavLink>
                                         </NavItem>
+                                        {tier === 2 && (
+                                            <>
+                                                <NavItem>
+                                                    <p
+                                                        style={{
+                                                            fontSize: `1em`,
+                                                            opacity: 0.8,
+                                                        }}
+                                                    >
+                                                        Blog
+                                                    </p>
+                                                </NavItem>
+                                                <NavItem>
+                                                    <NavLink
+                                                        onClick={
+                                                            toggleNavbarCollapse
+                                                        }
+                                                        data-placement="bottom"
+                                                        href="/blog"
+                                                        title="Blog Posts"
+                                                    >
+                                                        All Posts
+                                                    </NavLink>
+                                                </NavItem>
+                                                {data.allGhostTag.nodes.map(
+                                                    (tag) => {
+                                                        if (
+                                                            tag.slug ===
+                                                            `data-schema`
+                                                        ) {
+                                                        } else {
+                                                            return (
+                                                                <NavItem>
+                                                                    <NavLink
+                                                                        onClick={
+                                                                            toggleNavbarCollapse
+                                                                        }
+                                                                        key={
+                                                                            tag.slug +
+                                                                            1
+                                                                        }
+                                                                        data-placement="bottom"
+                                                                        href={`/tag/${tag.slug}`}
+                                                                        title={`${tag.slug} Blog Posts`}
+                                                                    >
+                                                                        {`#${tag.name}`}
+                                                                    </NavLink>
+                                                                </NavItem>
+                                                            )
+                                                        }
+                                                    }
+                                                )}
+                                            </>
+                                        )}
 
                                         {tier === 0 && (
                                             <>
+                                                <NavItem>
+                                                    <NavLink
+                                                        onClick={
+                                                            toggleNavbarCollapse
+                                                        }
+                                                        className="d-lg-none"
+                                                        data-placement="bottom"
+                                                        href="/"
+                                                        title="Follow us on Instagram"
+                                                    >
+                                                        Home
+                                                    </NavLink>
+                                                </NavItem>
                                                 <NavItem>
                                                     <NavLink
                                                         data-placement="bottom"
@@ -329,6 +435,7 @@ function IndexNavbar(props) {
                                                 </NavItem>
                                                 <Dropdown
                                                     nav
+                                                    className="d-none d-lg-block"
                                                     isOpen={dropdownOpen}
                                                     toggle={toggle}
                                                 >
@@ -369,50 +476,46 @@ function IndexNavbar(props) {
                                                 </Dropdown>
                                             </>
                                         )}
-                                        <div
+                                        <NavItem
                                             className="d-lg-none"
                                             style={{
                                                 display:
                                                     tier === 0
                                                         ? `block`
                                                         : `none`,
-                                                display: `flex`,
-                                                flexDirection: `row`,
-                                                // flexWrap: `wrap`,
-                                                justifyContent: `space-between`,
-                                                // backgroundColor: `black`,
-                                                borderRadius: `10px`,
-                                                color: `blue`,
-                                                padding: `20px`,
                                             }}
-                                            // onClick={toggle}
                                         >
-                                            {tier === 0 && (
-                                                <FontAwesomeIcon
-                                                    size={`lg`}
-                                                    icon={[`fab`, `instagram`]}
-                                                />
-                                            )}
-                                            {tier === 0 && (
-                                                <FontAwesomeIcon
-                                                    size={`lg`}
-                                                    icon={[`fab`, `instagram`]}
-                                                />
-                                            )}
-                                            <FontAwesomeIcon
-                                                onClick={(e) => {
+                                            <NavLink
+                                                style={{ cursor: `pointer` }}
+                                                onClick={() => {
                                                     changeTier(1)
                                                 }}
-                                                style={{
-                                                    display:
-                                                        tier === 0
-                                                            ? `block`
-                                                            : `none`,
+                                                data-placement="bottom"
+                                                title="Follow us on Social Media"
+                                            >
+                                                Social Media
+                                            </NavLink>
+                                        </NavItem>
+                                        <NavItem
+                                            className="d-lg-none"
+                                            style={{
+                                                display:
+                                                    tier === 0
+                                                        ? `block`
+                                                        : `none`,
+                                            }}
+                                        >
+                                            <NavLink
+                                                style={{ cursor: `pointer` }}
+                                                onClick={() => {
+                                                    changeTier(2)
                                                 }}
-                                                size={`lg`}
-                                                icon={[`fab`, `instagram`]}
-                                            />
-                                        </div>
+                                                data-placement="bottom"
+                                                title="Visit our Blog"
+                                            >
+                                                Blog
+                                            </NavLink>
+                                        </NavItem>
                                         <NavItem></NavItem>
                                     </Nav>
                                 </Collapse>
