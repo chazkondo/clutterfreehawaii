@@ -19,6 +19,8 @@ import {
 import { StaticQuery, graphql } from "gatsby"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import "../../utils/fontawesome"
+import e from "cors"
+import { ClassNames } from "@emotion/core"
 
 const stopPropagation = event => event.stopPropagation()
 
@@ -28,6 +30,7 @@ function IndexNavbar(props) {
     })
     const [loading, setLoading] = React.useState(0)
     const [divLoading, setDivLoading] = React.useState(false)
+    const [tier, changeTier] = React.useState(0)
 
     function reducer(state, action) {
         switch (action.type) {
@@ -70,6 +73,7 @@ function IndexNavbar(props) {
     const toggleNavbarCollapse = () => {
         setNavbarCollapse(navbarCollapse => !navbarCollapse)
         document.documentElement.classList.toggle(`nav-open`)
+        setTimeout(() => changeTier(0), 200)
     }
 
     const toggle = () => setDropdownOpen(!dropdownOpen)
@@ -86,6 +90,7 @@ function IndexNavbar(props) {
         if (wrapperRef.current && !wrapperRef.current.contains(event.target)) {
             setNavbarCollapse(false)
             document.documentElement.classList.remove(`nav-open`)
+            setTimeout(() => changeTier(0), 200)
         }
     }
 
@@ -202,14 +207,28 @@ function IndexNavbar(props) {
                                     isOpen={navbarCollapse}
                                 >
                                     <Nav
-                                        className={
-                                            props.backgroundDark
-                                                ? `darkMode`
-                                                : ``
-                                        }
+                                        className={classnames({
+                                            darkMode: props.backgroundDark,
+                                        })}
                                         navbar
                                     >
-                                        <NavItem>
+                                        <div
+                                            onClick={() => changeTier(0)}
+                                            className={
+                                                tier === 1
+                                                    ? ``
+                                                    : `d-none d-lg-block`
+                                            }
+                                        >
+                                            {`< Back`}
+                                        </div>
+                                        <NavItem
+                                            className={
+                                                tier === 1
+                                                    ? ``
+                                                    : `d-none d-lg-block`
+                                            }
+                                        >
                                             <NavLink
                                                 data-placement="bottom"
                                                 href="https://twitter.com/clutterfreehawaii"
@@ -226,7 +245,13 @@ function IndexNavbar(props) {
                                                 </p>
                                             </NavLink>
                                         </NavItem>
-                                        <NavItem>
+                                        <NavItem
+                                            className={
+                                                tier === 1
+                                                    ? ``
+                                                    : `d-none d-lg-block`
+                                            }
+                                        >
                                             <NavLink
                                                 data-placement="bottom"
                                                 href="https://www.facebook.com/clutterfreehawaii"
@@ -243,7 +268,13 @@ function IndexNavbar(props) {
                                                 </p>
                                             </NavLink>
                                         </NavItem>
-                                        <NavItem>
+                                        <NavItem
+                                            className={
+                                                tier === 1
+                                                    ? ``
+                                                    : `d-none d-lg-block`
+                                            }
+                                        >
                                             <NavLink
                                                 data-placement="bottom"
                                                 href="https://www.instagram.com/clutterfreehawaii"
@@ -254,13 +285,19 @@ function IndexNavbar(props) {
                                                     size={`lg`}
                                                     icon={[`fab`, `instagram`]}
                                                 />
-                                                <p className="d-lg-none d-md-none">
+                                                <p className="d-lg-none d-md-none d-sm-none">
                                                     {` `}
                                                     Instagram
                                                 </p>
                                             </NavLink>
                                         </NavItem>
-                                        <NavItem>
+                                        <NavItem
+                                            className={
+                                                tier === 1
+                                                    ? ``
+                                                    : `d-none d-lg-block`
+                                            }
+                                        >
                                             <NavLink
                                                 data-placement="bottom"
                                                 href="https://www.youtube.com/clutterfreehawaii"
@@ -277,75 +314,105 @@ function IndexNavbar(props) {
                                                 </p>
                                             </NavLink>
                                         </NavItem>
-                                        <NavItem>
-                                            <NavLink
-                                                data-placement="bottom"
-                                                href="mailto:clutterfreehawaii@gmail.com"
-                                                target="_blank"
-                                                title="Follow us on Instagram"
-                                            >
-                                                Contact
-                                            </NavLink>
-                                        </NavItem>
-                                        <Dropdown
+
+                                        {tier === 0 && (
+                                            <>
+                                                <NavItem>
+                                                    <NavLink
+                                                        data-placement="bottom"
+                                                        href="mailto:clutterfreehawaii@gmail.com"
+                                                        target="_blank"
+                                                        title="Follow us on Instagram"
+                                                    >
+                                                        Contact
+                                                    </NavLink>
+                                                </NavItem>
+                                                <Dropdown
+                                                    nav
+                                                    isOpen={dropdownOpen}
+                                                    toggle={toggle}
+                                                >
+                                                    <DropdownToggle nav caret>
+                                                        Blog
+                                                    </DropdownToggle>
+                                                    <DropdownMenu>
+                                                        <DropdownItem
+                                                            data-placement="bottom"
+                                                            href="/blog"
+                                                            title="Blog Posts"
+                                                        >
+                                                            All Posts
+                                                        </DropdownItem>
+                                                        {data.allGhostTag.nodes.map(
+                                                            (tag) => {
+                                                                if (
+                                                                    tag.slug ===
+                                                                    `data-schema`
+                                                                ) {
+                                                                } else {
+                                                                    return (
+                                                                        <DropdownItem
+                                                                            key={
+                                                                                tag.slug
+                                                                            }
+                                                                            data-placement="bottom"
+                                                                            href={`/tag/${tag.slug}`}
+                                                                            title={`${tag.slug} Blog Posts`}
+                                                                        >
+                                                                            {`#${tag.name}`}
+                                                                        </DropdownItem>
+                                                                    )
+                                                                }
+                                                            }
+                                                        )}
+                                                    </DropdownMenu>
+                                                </Dropdown>
+                                            </>
+                                        )}
+                                        <div
                                             className="d-lg-none"
-                                            nav
-                                            isOpen={smDropdownOpen}
-                                            toggle={toggleSm}
+                                            style={{
+                                                display:
+                                                    tier === 0
+                                                        ? `block`
+                                                        : `none`,
+                                                display: `flex`,
+                                                flexDirection: `row`,
+                                                // flexWrap: `wrap`,
+                                                justifyContent: `space-between`,
+                                                // backgroundColor: `black`,
+                                                borderRadius: `10px`,
+                                                color: `blue`,
+                                                padding: `20px`,
+                                            }}
+                                            // onClick={toggle}
                                         >
-                                            <DropdownToggle nav caret>
-                                                Social Media
-                                            </DropdownToggle>
-                                            <DropdownMenu>
-                                                <DropdownItem
-                                                    data-placement="bottom"
-                                                    href="/blog"
-                                                    title="Blog Posts"
-                                                >
-                                                    All Posts
-                                                </DropdownItem>
-                                            </DropdownMenu>
-                                        </Dropdown>
-                                        <Dropdown
-                                            nav
-                                            isOpen={dropdownOpen}
-                                            toggle={toggle}
-                                        >
-                                            <DropdownToggle nav caret>
-                                                Blog
-                                            </DropdownToggle>
-                                            <DropdownMenu>
-                                                <DropdownItem
-                                                    data-placement="bottom"
-                                                    href="/blog"
-                                                    title="Blog Posts"
-                                                >
-                                                    All Posts
-                                                </DropdownItem>
-                                                {data.allGhostTag.nodes.map(
-                                                    (tag) => {
-                                                        if (
-                                                            tag.slug ===
-                                                            `data-schema`
-                                                        ) {
-                                                        } else {
-                                                            return (
-                                                                <DropdownItem
-                                                                    key={
-                                                                        tag.slug
-                                                                    }
-                                                                    data-placement="bottom"
-                                                                    href={`/tag/${tag.slug}`}
-                                                                    title={`${tag.slug} Blog Posts`}
-                                                                >
-                                                                    {`#${tag.name}`}
-                                                                </DropdownItem>
-                                                            )
-                                                        }
-                                                    }
-                                                )}
-                                            </DropdownMenu>
-                                        </Dropdown>
+                                            {tier === 0 && (
+                                                <FontAwesomeIcon
+                                                    size={`lg`}
+                                                    icon={[`fab`, `instagram`]}
+                                                />
+                                            )}
+                                            {tier === 0 && (
+                                                <FontAwesomeIcon
+                                                    size={`lg`}
+                                                    icon={[`fab`, `instagram`]}
+                                                />
+                                            )}
+                                            <FontAwesomeIcon
+                                                onClick={(e) => {
+                                                    changeTier(1)
+                                                }}
+                                                style={{
+                                                    display:
+                                                        tier === 0
+                                                            ? `block`
+                                                            : `none`,
+                                                }}
+                                                size={`lg`}
+                                                icon={[`fab`, `instagram`]}
+                                            />
+                                        </div>
                                         <NavItem></NavItem>
                                     </Nav>
                                 </Collapse>

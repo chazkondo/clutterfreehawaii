@@ -1,3 +1,12 @@
+@font-face {
+    font-family: 'Corona';
+    src: url("../fonts/AAntiCorona-PKZx7.otf");
+    src: url("../fonts/AAntiCorona-PKZx7.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal; 
+}
+  
+
 .landing-alert{
     margin-bottom: 0;
 }
@@ -203,7 +212,7 @@
 
 .presentation-title{
     font-size: 8em;
-    font-weight: 700;
+    font-weight: 600;
     margin: 0;
     color: #FFFFFF;
     background: #fbf8ec;
