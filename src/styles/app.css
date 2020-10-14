@@ -1580,12 +1580,12 @@ h6 {
 
 
 @media (max-width: 768px) {
-    .aes {
+    /* .aes {
         display: none
     }
     .act {
         display: none
-    }
+    } */
     .section1Container {
         padding-top: 150px !important;
     }
@@ -1660,11 +1660,11 @@ h6 {
         bottom: 30px !important;
     }
     .bottomSVG {
-        top: 100px !important;
+        top: 40px !important;
     }
   }
 
-  @media (max-width: 500px) {
+  @media (max-width: 510px) {
     .section1 {
         height: 630px;
     }
@@ -1675,12 +1675,21 @@ h6 {
         display: block
     }
     .section1Header {
-        font-size: 8px !important
+        font-size: 9px !important
     }
     .section1Caption {
         font-size: 20px !important
     }
     .section1CaptionDark {
         font-size: 20px !important
+    }
+  }
+
+  @media (max-width: 360px) {
+    .topSVG {
+        display: none
+    }
+    .bottomSVG {
+        display: none
     }
   }
