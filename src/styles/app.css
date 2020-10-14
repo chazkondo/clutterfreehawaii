@@ -1667,10 +1667,11 @@ h6 {
         bottom: 0px !important;
     }
     .bottomSVG {
-        display: none    }
-        .mySVG {
-            display: none
-          }
+        display: none    
+    }
+    .mySVG {
+        display: none
+    }
   }
 
   @media (max-width: 700px) {
