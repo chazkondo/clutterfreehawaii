@@ -8,10 +8,3 @@
 [template]
   incoming-hooks = ["Ghost"]
 
-[[headers]]
-  for = "/*"
-  [headers.values]
-	cache-control = '''
-  public, 
-  max-age=604800,
-	immutable'''
