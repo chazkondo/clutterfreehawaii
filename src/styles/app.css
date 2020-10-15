@@ -1317,7 +1317,7 @@ h6 {
     top: 0;
     left: 0;
     z-index: -2;
-    transition: opacity 1.5s ease-out;
+    /* transition: opacity .2s ease-out; */
 }
 
 .section1Dark {
@@ -1340,7 +1340,7 @@ h6 {
     top: 0;
     left: 0;
     z-index: -2;
-    transition: opacity 1.5s ease-out;
+    /* transition: opacity .2s ease-out; */
 }
 
 .sectionOverlay {
