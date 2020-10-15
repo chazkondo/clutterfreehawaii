@@ -13,7 +13,6 @@
     transition: all 0.4s;
     -webkit-transition: all 0.4s;
     padding: 0;
-    background: rgba(255,255,255,0.85);
     box-shadow: 0 6px 10px -4px rgba(0, 0, 0, 0.15);
 
     .navbar-brand {
@@ -35,7 +34,7 @@
     &:not([class*="bg"]) {
       .navbar-toggler {
         .navbar-toggler-bar {
-          background: rgba(17, 17, 17, 0.8) !important;
+          background: rgba(17, 17, 17, 9) !important;
         }
       }
     }
@@ -83,7 +82,8 @@
         }
     }
     .navbar-collapse{
-      background-color: rgba(255,255,255,0.93);
+      // background-color: rgba(255,255,255,0.93);
+      padding-right: 10px;
         & .nav-item{
           p{
             color: rgba(39, 39, 39, 0.9) !important;
@@ -114,13 +114,18 @@
         &.show{
             & .navbar-nav{
                 & .nav-item .nav-link{
-                    padding-right: 10px;
                     color: rgba(17, 17, 17, 0.7) !important;
                 }
                 & .nav-item:hover .nav-link:hover {
                   color: rgba(17, 17, 17, 0.5) !important;
                 }
             }
+        }
+        &:after {
+          // background-color: rgba(255,255,255,1);
+        }
+        hr {
+          background-color: rgba(17, 17, 17, 0.9)
         }
     }
     #navbarSupportedContent{
@@ -214,8 +219,32 @@
     }
 }
 
+@media screen and (min-width:991px){
+  .darkmode {
+    background: rgba(17, 17, 17, 0.9);
+  }
+  .lightmode {
+    background: rgba(255,255,255, 0.93);
+  }
+  .navbar-translate {
+    &.darkMode{
+        background-color: rgba(17, 17, 17, 0);
+    }
+}
+}
+
+@media screen and (max-width:991px){
+  .navbar-translate {
+    &.darkMode{
+        background-color: rgba(17, 17, 17, 0.9);
+    }
+    &.lightMode {
+      background: rgba(255,255,255, 0.93);
+    }
+}
+}
+
 .darkmode {
-  background: rgba(17, 17, 17, 0.8) !important;
   box-shadow: 0 6px 10px -4px rgba(255, 255, 255, 0.15);
   .navbar-nav {
     .nav-item .nav-link {
@@ -230,7 +259,8 @@
     }
   }
   .navbar-collapse{
-    background-color: rgba(17, 17, 17, 0.9);
+    padding-right: 10px;
+    // background-color: rgba(17, 17, 17, 0.9);
     & .nav-item{
         p{
           color: rgba(255, 255, 255, 0.9) !important;
@@ -260,13 +290,18 @@
     &.show{
         & .navbar-nav{
             & .nav-item .nav-link{
-                padding-right: 10px;
                 color: rgba(255, 255, 255, 0.9) !important;
             }
             & .nav-item:hover .nav-link:hover{
               color:  rgba(255, 255, 255, .6) !important
           }
         }
+    }
+    // &:after {
+    //   background-color: rgba(17, 17, 17, 0);
+    // }
+    hr {
+      background-color: rgba(255, 255, 255, 0.2);
     }
 }
   .navbar-brand {
@@ -303,7 +338,7 @@
 
         &:focus,
         &:hover{
-            background-color: transparent;
+            background-color: transparent !important;
             @include opacity(1);
             color: $white-color;
         }
@@ -373,5 +408,11 @@
       padding: 20px 0;
       margin-top: 20px;
     }
+  }
+}
+
+.navbar-transparent {
+  .navbar-translate {
+          background-color: rgba(255, 255, 255, 0);
   }
 }

@@ -471,6 +471,12 @@
                 }
             }
         }
+        &.darkMode{
+            background-color: rgba(17, 17, 17, 0.9);
+        }
+        &.lightMode{
+            background-color: rgba(255, 255, 255, 0.93);
+        }
         &::after{
             top: 0;
             left: 0;
@@ -633,6 +639,13 @@
 
 
 @media screen and (min-width:991px){
+
+    // .navbar-expand-lg {
+    //     background-color: rgba(17, 17, 17, 0.9);
+    // }
+
+
+    
     .burger-menu{
         .navbar-collapse {
             position: fixed;

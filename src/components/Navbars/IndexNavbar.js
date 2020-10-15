@@ -173,13 +173,20 @@ function IndexNavbar(props) {
                                         state.navbarColor,
                                         `darkmode`
                                     )
-                                    : classnames(`fixed-top`, state.navbarColor)
+                                    : classnames(
+                                        `fixed-top`,
+                                        state.navbarColor,
+                                        `lightmode`
+                                    )
                             }
                             expand="lg"
                         >
                             <Container>
                                 <div
-                                    className="navbar-translate"
+                                    className={classnames(`navbar-translate`, {
+                                        darkMode: props.backgroundDark,
+                                        lightMode: !props.backgroundDark,
+                                    })}
                                     onClick={stopPropagation}
                                 >
                                     <NavbarBrand
@@ -205,13 +212,20 @@ function IndexNavbar(props) {
                                     </button>
                                 </div>
                                 <Collapse
-                                    className="justify-content-end"
+                                    className={classnames(
+                                        `justify-content-end`,
+                                        {
+                                            darkMode: props.backgroundDark,
+                                            lightMode: !props.backgroundDark,
+                                        }
+                                    )}
                                     navbar
                                     isOpen={navbarCollapse}
                                 >
                                     <Nav
                                         className={classnames({
                                             darkMode: props.backgroundDark,
+                                            lightMode: !props.backgroundDark,
                                         })}
                                         navbar
                                     >
