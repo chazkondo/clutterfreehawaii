@@ -46,6 +46,7 @@ export default function LightSwitch({ backgroundDark, setBackgroundDark }) {
             className="lightButton"
             onClick={() => toggleMode()}
             style={{
+                padding: '25px 5px 10px 20px',
                 cursor: `pointer`,
                 bottom: `10%`,
                 right: `3%`,
