@@ -1584,11 +1584,41 @@ h6 {
         top: 50% 
     }
 
-    @media (max-width: 1055px) {
-        .bottomSVG {
-            top: 300px    
-        }
+    .bottomSVG {
+        top: 390px
     }
+
+@media (min-width: 1370px) {
+    .bottomSVG {
+        top: 380px;
+        /* display: none */
+    }
+}
+@media (max-width: 1370px) {
+    .bottomSVG {
+        top: 350px;
+    }
+}
+@media (max-width: 1250px) {
+    .bottomSVG {
+        top: 300px;
+    }
+}
+
+/* @media (max-width: 1055px) {
+    .bottomSVG {
+        top: 300px;
+        color: red !important;
+        background-color: red !important;
+    }
+}*/
+@media (max-width: 1000px) {
+    .bottomSVG {
+        top: 250px;
+        /* color: green !important;
+        background-color: green !important; */
+    }
+} 
 
 @media (max-width: 767.98px) {
     .headerRef {
@@ -1721,9 +1751,9 @@ h6 {
   }
 
   @media (min-width: 1550px) {
-    .bottomSVG {
-        display: none
-    }
+      .bottomSVG {
+          display: none
+      }
     .SectionTextContainers {
         text-align: left; 
         width: 900px; 
