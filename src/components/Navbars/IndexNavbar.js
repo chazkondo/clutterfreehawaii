@@ -52,7 +52,10 @@ function IndexNavbar(props) {
     const scrollListener = () => {
         const totalHeight =
             document.documentElement.scrollHeight -
-            document.documentElement.clientHeight
+            document.documentElement.clientHeight -
+            0.02 *
+                (document.documentElement.scrollHeight -
+                    document.documentElement.clientHeight)
         const windowScrollTop =
             window.pageYOffset ||
             document.documentElement.scrollTop ||
@@ -210,10 +213,6 @@ function IndexNavbar(props) {
                                         className={classnames({
                                             darkMode: props.backgroundDark,
                                         })}
-                                        style={{
-                                            height: `100vh !important`,
-                                            overflow: `auto !important`,
-                                        }}
                                         navbar
                                     >
                                         <NavItem
