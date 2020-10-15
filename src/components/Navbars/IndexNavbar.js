@@ -53,7 +53,7 @@ function IndexNavbar(props) {
         const totalHeight =
             document.documentElement.scrollHeight -
             document.documentElement.clientHeight -
-            0.02 *
+            0.04 *
                 (document.documentElement.scrollHeight -
                     document.documentElement.clientHeight)
         const windowScrollTop =
