@@ -246,9 +246,9 @@ function Section1({ backgroundDark, borderVisible }) {
                     animate={backgroundDark ? borderVisible ? "lessFaded2" : "fadedTransition" : borderVisible ? "lessFaded" : "fadedTransition"}
                     className="section1Divider1 bottomSVG"
                     style={{ zIndex: backgroundDark ? '0' : '-2' }}
-                    width="100%" height="640pt" version="1.0" viewBox="0 0 1280 640" xmlns="http://www.w3.org/2000/svg">
+                    width="100%" height="640pt" version="1.0" viewBox="-30 0 1280 600" xmlns="http://www.w3.org/2000/svg">
                     <g
-                        fill={backgroundDark ? "white" : "green"} transform="translate(0 640) scale(.1 -.1)">
+                        fill={backgroundDark ? "white" : "green"} transform="translate(0 275) scale(.1 -.1)">
                         <path d="m323 3303c-18-6-16-48 2-84 9-16 34-43 57-59 42-31 115-56 126-45 10 10-46 109-82 144-32 31-80 52-103 44z" />
                         {/* <path d="m12436 3299c-41-11-99-71-126-130-13-27-21-51-18-54 10-10 108 26 138 51 36 31 60 73 60 107 0 30-15 37-54 26z" /> */}
                         <path d="m5040 3164c0-29 9-45 55-93 58-61 67-84 38-99-23-12-42-5-73 24-57 52-120 36-215-55-42-40-53-56-44-62 8-4 43-31 79-59 59-48 67-52 106-47 26 2 60 17 87 37 87 62 117 16 38-58-49-46-51-50-51-100 0-29 3-52 7-52s28 21 54 46c39 39 56 48 100 55 85 13 124 71 84 123-33 44-12 58 44 30 40-20 85-7 127 37 33 35 28 51-27 81-40 22-80 18-121-12-15-11-32-20-38-20-15 0-12 36 5 50 21 18 19 66-5 90-13 13-33 20-61 20-52 0-96 21-139 65-19 19-38 35-42 35s-8-16-8-36z" />
@@ -278,9 +278,9 @@ function Section1({ backgroundDark, borderVisible }) {
                     animate={backgroundDark ? borderVisible ? "lessFaded2" : "fadedTransition" : borderVisible ? "lessFaded" : "fadedTransition"}
                     className="section1Divider2 bottomSVG"
                     style={{ zIndex: backgroundDark ? '0' : '-2' }}
-                    width="100%" height="640pt" version="1.0" viewBox="0 0 1280 640" xmlns="http://www.w3.org/2000/svg">
+                    width="100%" height="640pt" version="1.0" viewBox="30 0 1280 600" xmlns="http://www.w3.org/2000/svg">
                     <g
-                        fill={backgroundDark ? "white" : "green"} transform="translate(0 640) scale(.1 -.1)">
+                        fill={backgroundDark ? "white" : "green"} transform="translate(0 275) scale(.1 -.1)">
                         {/* <path d="m323 3303c-18-6-16-48 2-84 9-16 34-43 57-59 42-31 115-56 126-45 10 10-46 109-82 144-32 31-80 52-103 44z" /> */}
                         <path d="m12436 3299c-41-11-99-71-126-130-13-27-21-51-18-54 10-10 108 26 138 51 36 31 60 73 60 107 0 30-15 37-54 26z" />
                         {/* <path d="m5040 3164c0-29 9-45 55-93 58-61 67-84 38-99-23-12-42-5-73 24-57 52-120 36-215-55-42-40-53-56-44-62 8-4 43-31 79-59 59-48 67-52 106-47 26 2 60 17 87 37 87 62 117 16 38-58-49-46-51-50-51-100 0-29 3-52 7-52s28 21 54 46c39 39 56 48 100 55 85 13 124 71 84 123-33 44-12 58 44 30 40-20 85-7 127 37 33 35 28 51-27 81-40 22-80 18-121-12-15-11-32-20-38-20-15 0-12 36 5 50 21 18 19 66-5 90-13 13-33 20-61 20-52 0-96 21-139 65-19 19-38 35-42 35s-8-16-8-36z" /> */}
@@ -305,6 +305,8 @@ function Section1({ backgroundDark, borderVisible }) {
                     </g>
                 </motion.svg>
             </div>
+            {/* <div style={{ border: '2px solid green', width: '100%', height: '100%', display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}> */}
+            {/* </div> */}
         </>
     )
 }

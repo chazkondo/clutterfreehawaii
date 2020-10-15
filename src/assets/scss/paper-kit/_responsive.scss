@@ -427,6 +427,7 @@
     }
 }
 @media screen and (max-width: 991px){
+        // This is the settings for the nav bar collapsed
     .navbar-collapse {
         position: fixed;
         display: block !important;
@@ -436,14 +437,14 @@
         right: 0;
         z-index: 1032;
         visibility: visible;
-        background-color: #999;
-        overflow-y: visible;
+        overflow-y: scroll;
         border-top: none;
         text-align: left;
         border-left: 1px solid #CCC5B9;
         padding-right: 0px;
         padding-left: 40px;
         padding-top: 15px;
+        background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(112, 112, 112, 0) 60%, rgba(186, 186, 186, 0.15) 100%);
 
         @include transform-translate-x(230px);
         @include transition (0.33s, cubic-bezier(0.685, 0.0473, 0.346, 1));
@@ -476,8 +477,7 @@
             height: 100%;
             width: 100%;
             position: absolute;
-            background-color: $bg-nude;
-            background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(112, 112, 112, 0) 60%, rgba(186, 186, 186, 0.15) 100%);
+            // background-color: $bg-nude;
             display: block;
             content: "";
             z-index: 1;

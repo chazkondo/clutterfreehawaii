@@ -83,6 +83,7 @@
         }
     }
     .navbar-collapse{
+      background-color: rgba(255,255,255,0.93);
         & .nav-item{
           p{
             color: rgba(39, 39, 39, 0.9) !important;
@@ -120,10 +121,6 @@
                   color: rgba(17, 17, 17, 0.5) !important;
                 }
             }
-        }
-
-        &:after {
-          background-color: rgba(255,255,255,1);
         }
     }
     #navbarSupportedContent{
@@ -233,6 +230,7 @@
     }
   }
   .navbar-collapse{
+    background-color: rgba(17, 17, 17, 0.9);
     & .nav-item{
         p{
           color: rgba(255, 255, 255, 0.9) !important;
@@ -269,10 +267,6 @@
               color:  rgba(255, 255, 255, .6) !important
           }
         }
-    }
-
-    &:after {
-      background-color: rgba(17, 17, 17, 0.8);
     }
 }
   .navbar-brand {

@@ -5,6 +5,7 @@ import React, { svg, button } from "react"
 import { Video } from "../Video/Video.jsx"
 import { Divider } from "../Dividers/Divider.jsx"
 import HeaderContent from "../Headers/HeaderContent.jsx"
+import MyBackgroundImage from "./MyBackgroundImage.jsx"
 
 // import zenBackground from "../../assets/img/creative-commons-zen.jpg"
 import rainBackground from "../../assets/img/rain3.png"
@@ -12,31 +13,10 @@ import rainBackground from "../../assets/img/rain3.png"
 // import BackgroundImage from "gatsby-background-image"
 // const HeaderContent = React.lazy(() => import("./HeaderContent"))
 
-import { graphql, useStaticQuery } from "gatsby"
-import styled from "styled-components"
-
-import BackgroundImage from "gatsby-background-image"
-
 function IndexHeader({ backgroundDark }) {
     const [play, pressPlay] = React.useState(false)
     const [backgroundOpacity, setBackgroundOpacity] = React.useState(0.94)
     const [groundZeroOpacity, setGroundZeroOpacity] = React.useState(1)
-
-    const data = useStaticQuery(
-        graphql`
-            query {
-                static: file(relativePath: { eq: "creative-commons-zen.jpg" }) {
-                    childImageSharp {
-                        fluid(quality: 45, maxWidth: 1920) {
-                            ...GatsbyImageSharpFluid_withWebp
-                        }
-                    }
-                }
-            }
-        `
-    )
-
-    const imageData = data.static.childImageSharp.fluid
 
     // const [mybackground, setMybackground] = React.useState(
     //     `url(${zenBackground})`
@@ -67,23 +47,12 @@ function IndexHeader({ backgroundDark }) {
                         position: "absolute",
                         top: 0,
                         left: 0,
-                        background: "white",
+                        // background: "white",
                         opacity: groundZeroOpacity,
                         transition: "opacity 0.5s linear",
                     }}
                 />
-                <BackgroundImage
-                    Tag="section"
-                    loading="eager"
-                    className="page-header section-dark"
-                    style={{
-                        position: "absolute",
-                        // backgroundColor: "rgba(255,255,255,1)",
-                        opacity: backgroundOpacity,
-                        transition: "opacity 3s linear",
-                    }}
-                    fluid={imageData}
-                ></BackgroundImage>
+                <MyBackgroundImage backgroundOpacity={backgroundOpacity} />
                 {/* <div
                                 className="page-header section-dark"
                                 style={{

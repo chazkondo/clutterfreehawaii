@@ -1489,15 +1489,16 @@ h6 {
 }
 
 .section1Divider1 {
+    /* align-self: flex-end; */
     position: absolute; 
-    top: 3%;
-    left: 3%
+    /* top: 3%;
+    left: 3% */
 }
 
 .section1Divider2 {
     position: absolute; 
-    top: 3%;
-    right: 3%
+    /* top: 3%;
+    right: 3% */
 }
 
 .section2Divider {
@@ -1583,7 +1584,13 @@ h6 {
         top: 50% 
     }
 
-@media (max-width: 768px) {
+    @media (max-width: 1055px) {
+        .bottomSVG {
+            top: 300px    
+        }
+    }
+
+@media (max-width: 767.98px) {
     .headerRef {
         top: 25% 
     }
@@ -1710,5 +1717,25 @@ h6 {
     }
     .bottomSVG {
         display: none
+    }
+  }
+
+  @media (min-width: 1550px) {
+    .bottomSVG {
+        display: none
+    }
+    .SectionTextContainers {
+        text-align: left; 
+        width: 900px; 
+        height: 100%; 
+        display: flex;
+        flex-direction: column;
+        justify-items: center;
+        justify-content: center;
+        align-items: center;
+        /* background-color: pink */
+      }
+    .SectionImages {
+        width: 800px
     }
   }
