@@ -210,6 +210,10 @@ function IndexNavbar(props) {
                                         className={classnames({
                                             darkMode: props.backgroundDark,
                                         })}
+                                        style={{
+                                            height: `100vh !important`,
+                                            overflow: `auto !important`,
+                                        }}
                                         navbar
                                     >
                                         <NavItem
@@ -374,7 +378,7 @@ function IndexNavbar(props) {
                                                         href="/blog"
                                                         title="Blog Posts"
                                                     >
-                                                        All Posts
+                                                        ○ All Posts
                                                     </NavLink>
                                                 </NavItem>
                                                 {data.allGhostTag.nodes.map(
@@ -398,7 +402,8 @@ function IndexNavbar(props) {
                                                                         href={`/tag/${tag.slug}`}
                                                                         title={`${tag.slug} Blog Posts`}
                                                                     >
-                                                                        {`#${tag.name}`}
+                                                                        ○
+                                                                        {` #${tag.name}`}
                                                                     </NavLink>
                                                                 </NavItem>
                                                             )
