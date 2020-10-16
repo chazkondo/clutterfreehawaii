@@ -71,7 +71,7 @@ export default function MyBackgroundImage({ backgroundOpacity, setLoaded }) {
             transition: "opacity 3s linear",
         }}
         fluid={sources}
-        onLoad={()=>setTimeout(()=>setLoaded(true), 200)}
+        onLoad={()=>setLoaded(true)}
         onStartLoad={()=>setLoaded(false)}
     ></Img>
 }
