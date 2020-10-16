@@ -7,7 +7,7 @@ import { motion } from 'framer-motion'
 import useIntersect from "../Helpers/useIntersect";
 
 
-function Section1({ backgroundDark }) {
+function Section1({ backgroundDark, size }) {
 
     const [functionFired, setFunctionFired] = React.useState(false)
     const [functionWasFired, functionIsFiring] = React.useState(false)
@@ -178,7 +178,7 @@ function Section1({ backgroundDark }) {
                             <motion.h1
                                 className={backgroundDark ? "overlapDark" : "overlap"}
                                 variants={variants}
-                                initial="bottom"
+                                initial={size.width > 767 ? "bottom" : "top"}
                                 animate={headerDetected && "top"}
                                 transition={{ ease: "easeOut", duration: 0.6 }} style={{ color: 'rgba(63, 63, 63, 1)', letterSpacing: '-0.45rem', alignSelf: 'center', justifySelf: 'end', margin: 0, padding: 0 }}>Aesthetics.
                             </motion.h1>
@@ -197,7 +197,7 @@ function Section1({ backgroundDark }) {
                             <motion.h1
                                 className={backgroundDark ? "overlapDark" : "overlap"}
                                 variants={variants}
-                                initial="bottom"
+                                initial={size.width > 767 ? "bottom" : "top"}
                                 animate={headerDetected && "top"}
                                 transition={{ ease: "easeOut", duration: 0.6 }} style={{ color: 'rgba(52, 52, 52, 1)', letterSpacing: '-0.45rem', alignSelf: 'center', justifySelf: 'center' }}>&nbsp;Atmosphere.
                             </motion.h1>
@@ -215,7 +215,7 @@ function Section1({ backgroundDark }) {
                             <motion.h1
                                 className={backgroundDark ? "overlapDark" : "overlap"}
                                 variants={variants}
-                                initial="bottom"
+                                initial={size.width > 767 ? "bottom" : "top"}
                                 animate={headerDetected && "top"}
                                 transition={{ ease: "easeOut", duration: 0.6 }} style={{ color: 'rgba(42, 42, 42, 1)', letterSpacing: '-0.45rem', alignSelf: 'center', justifySelf: 'start', margin: 0, padding: 0, }}>&nbsp;Action.
                             </motion.h1>
@@ -230,7 +230,7 @@ function Section1({ backgroundDark }) {
                     <motion.h3
                         className={backgroundDark ? "section1CaptionDark" : "section1Caption"}
                         variants={variants}
-                        initial="faded"
+                        initial={size.width > 767 ? "faded" : "unfaded"}
                         animate={captionDetected && "unfaded"}
                         style={{
                             color: 'rgba(50, 50, 50, 1)',

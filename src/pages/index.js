@@ -17,8 +17,12 @@ import "../assets/css/bootstrap.min.css"
 import "../assets/scss/paper-kit.scss?v=1.2.0"
 import "../assets/demo/demo.css?v=1.2.0"
 
+// helper
+import useWindowSize from "../components/Helpers/useWindowSize.js"
+
 function Index() {
     const [backgroundDark, setBackgroundDark] = React.useState(false)
+    const size = useWindowSize()
 
     React.useLayoutEffect(() => {
         const hours = new Date().getHours()
@@ -29,9 +33,9 @@ function Index() {
     return (
         <>
             <IndexNavbar showProgressBar backgroundDark={backgroundDark} />
-            <IndexHeader backgroundDark={backgroundDark} />
+            <IndexHeader backgroundDark={backgroundDark} size={size} />
             <div className="main">
-                <Section1 backgroundDark={backgroundDark} />
+                <Section1 backgroundDark={backgroundDark} size={size} />
                 <Section2 backgroundDark={backgroundDark} />
                 <Section3 backgroundDark={backgroundDark} />
                 <Section4 backgroundDark={backgroundDark} />

@@ -15,7 +15,7 @@ import rainBackground from "../../assets/img/rain3.png"
 import Spinner from "react-spinkit"
 import Loading from "../../components/Loading/Loading.jsx"
 
-function IndexHeader({ backgroundDark }) {
+function IndexHeader({ backgroundDark, size }) {
     const [play, pressPlay] = React.useState(false)
     const [backgroundOpacity, setBackgroundOpacity] = React.useState(0.94)
     const [groundZeroOpacity, setGroundZeroOpacity] = React.useState(1)
@@ -95,6 +95,7 @@ function IndexHeader({ backgroundDark }) {
                 <div className="content-center">
                     {/* <React.Suspense fallback={<div></div>}> */}
                     <HeaderContent
+                        size={size}
                         loaded={loaded}
                         backgroundDark={backgroundDark}
                         backgroundOpacity={backgroundOpacity}
