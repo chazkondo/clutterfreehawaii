@@ -54,6 +54,16 @@ function IndexHeader({ backgroundDark }) {
                         transition: "opacity 0.5s linear",
                     }}
                 />
+                {!loaded && (
+                    <Spinner
+                        style={{
+                            position: "absolute",
+                            zIndex: 4,
+                        }}
+                        color="white"
+                        name="cube-grid"
+                    />
+                )}
                 <MyBackgroundImage
                     backgroundOpacity={backgroundOpacity}
                     setLoaded={setLoaded}
