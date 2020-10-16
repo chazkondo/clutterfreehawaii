@@ -2,7 +2,7 @@ import React from 'react'
 
 import { graphql, useStaticQuery } from "gatsby"
 
-import BackgroundImage from "gatsby-background-image"
+import Img from "gatsby-image"
 
 export default function MyBackgroundImage({ backgroundOpacity }) {
 
@@ -22,7 +22,7 @@ export default function MyBackgroundImage({ backgroundOpacity }) {
 
     const imageData = data.static.childImageSharp.fluid
 
-    return <BackgroundImage
+    return <Img
         Tag="section"
         loading="eager"
         className="page-header"
@@ -33,5 +33,5 @@ export default function MyBackgroundImage({ backgroundOpacity }) {
             transition: "opacity 3s linear",
         }}
         fluid={imageData}
-    ></BackgroundImage>
+    ></Img>
 }
