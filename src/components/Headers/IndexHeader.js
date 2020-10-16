@@ -12,7 +12,7 @@ import rainBackground from "../../assets/img/rain3.png"
 
 // const HeaderContent = React.lazy(() => import("./HeaderContent"))
 
-function IndexHeader({ backgroundDark, setLoaded }) {
+function IndexHeader({ backgroundDark, setLoaded, loaded }) {
     const [play, pressPlay] = React.useState(false)
     const [backgroundOpacity, setBackgroundOpacity] = React.useState(0.94)
     const [groundZeroOpacity, setGroundZeroOpacity] = React.useState(1)
@@ -80,13 +80,15 @@ function IndexHeader({ backgroundDark, setLoaded }) {
 
                 <div className="content-center">
                     {/* <React.Suspense fallback={<div></div>}> */}
-                    <HeaderContent
-                        backgroundDark={backgroundDark}
-                        backgroundOpacity={backgroundOpacity}
-                        setBackgroundOpacity={setBackgroundOpacity}
-                        setGroundZeroOpacity={setGroundZeroOpacity}
-                        pressPlay={pressPlay}
-                    />
+                    {loaded && (
+                        <HeaderContent
+                            backgroundDark={backgroundDark}
+                            backgroundOpacity={backgroundOpacity}
+                            setBackgroundOpacity={setBackgroundOpacity}
+                            setGroundZeroOpacity={setGroundZeroOpacity}
+                            pressPlay={pressPlay}
+                        />
+                    )}
                     {/* </React.Suspense> */}
                 </div>
 

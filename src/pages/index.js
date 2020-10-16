@@ -31,36 +31,30 @@ function Index() {
 
     return (
         <>
-            <Loading loaded={true} />
-            {loaded && (
-                <IndexNavbar showProgressBar backgroundDark={backgroundDark} />
-            )}
+            <IndexNavbar showProgressBar backgroundDark={backgroundDark} />
             <IndexHeader
                 backgroundDark={backgroundDark}
+                loaded={loaded}
                 setLoaded={setLoaded}
             />
-            {loaded && (
-                <div className="main">
-                    <Section1
-                        backgroundDark={backgroundDark}
-                        borderVisible={borderVisible}
-                    />
-                    <Section2
-                        backgroundDark={backgroundDark}
-                        setBorderVisible={setBorderVisible}
-                    />
-                    <Section3 backgroundDark={backgroundDark} />
-                    <Section4 backgroundDark={backgroundDark} />
-                    {/* <Section5 backgroundDark={backgroundDark} /> */}
-                </div>
-            )}
-            {loaded && (
-                <LightSwitch
+            <div className="main">
+                <Section1
                     backgroundDark={backgroundDark}
-                    setBackgroundDark={setBackgroundDark}
+                    borderVisible={borderVisible}
                 />
-            )}
-            {loaded && <Footer backgroundDark={backgroundDark} />}
+                <Section2
+                    backgroundDark={backgroundDark}
+                    setBorderVisible={setBorderVisible}
+                />
+                <Section3 backgroundDark={backgroundDark} />
+                <Section4 backgroundDark={backgroundDark} />
+                {/* <Section5 backgroundDark={backgroundDark} /> */}
+            </div>
+            <LightSwitch
+                backgroundDark={backgroundDark}
+                setBackgroundDark={setBackgroundDark}
+            />
+            <Footer backgroundDark={backgroundDark} />
         </>
     )
 }
