@@ -13,6 +13,6 @@ export default function Loading({loaded}) {
         position: 'absolute',
         backgroundColor: 'white'
         }}>
-        Loading animation
+        Loading
     </div>
 }
