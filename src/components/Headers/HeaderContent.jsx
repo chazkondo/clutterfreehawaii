@@ -84,7 +84,7 @@ export default function HeaderContent({ loaded,backgroundOpacity, setBackgroundO
                 }}
             >
                 <h1 className="presentation-title">
-                    {loaded && `Clutter Free Hawai'i`}
+                    {size.width < 511 ? `Clutter Free Hawai'i` : (loaded && `Clutter Free Hawai'i`)}
                 </h1>
                 {loaded && <motion.span
                     className="headerSpan"
