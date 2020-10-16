@@ -42,14 +42,17 @@ export default function MyBackgroundImage({ backgroundOpacity, setLoaded }) {
     )
 
     const sources = [
-        data.static4.childImageSharp.fluid,
+        {
+            ...data.static4.childImageSharp.fluid,
+            media: `(max-width: 300px)`
+        },
         {
             ...data.static3.childImageSharp.fluid,
-            media: `(min-width: 400px)`,
+            media: `(min-width: 301px) and (max-width: 999px)`,
           },
         {
           ...data.static2.childImageSharp.fluid,
-          media: `(min-width: 768px)`,
+          media: `(min-width: 1000px) and (max-width: 1919px)`,
         },
         {
             ...data.static1.childImageSharp.fluid,
