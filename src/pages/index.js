@@ -11,6 +11,7 @@ import Section4 from "../components/Sections/Section4"
 import Section5 from "../components/Sections/Section5"
 
 import LightSwitch from "../components/Buttons/LightSwitch/LightSwitch.jsx"
+import Loading from "../components/Loading/Loading.jsx"
 
 //css
 import "../assets/css/bootstrap.min.css"
@@ -20,6 +21,7 @@ import "../assets/demo/demo.css?v=1.2.0"
 function Index() {
     const [borderVisible, setBorderVisible] = React.useState(false)
     const [backgroundDark, setBackgroundDark] = React.useState(false)
+    const [loaded, setLoaded] = React.useState(false)
 
     React.useLayoutEffect(() => {
         const hours = new Date().getHours()
@@ -29,8 +31,12 @@ function Index() {
 
     return (
         <>
+            <Loading loaded={loaded} />
             <IndexNavbar showProgressBar backgroundDark={backgroundDark} />
-            <IndexHeader backgroundDark={backgroundDark} />
+            <IndexHeader
+                backgroundDark={backgroundDark}
+                setLoaded={setLoaded}
+            />
             <div className="main">
                 <Section1
                     backgroundDark={backgroundDark}

@@ -12,7 +12,7 @@ import rainBackground from "../../assets/img/rain3.png"
 
 // const HeaderContent = React.lazy(() => import("./HeaderContent"))
 
-function IndexHeader({ backgroundDark }) {
+function IndexHeader({ backgroundDark, setLoaded }) {
     const [play, pressPlay] = React.useState(false)
     const [backgroundOpacity, setBackgroundOpacity] = React.useState(0.94)
     const [groundZeroOpacity, setGroundZeroOpacity] = React.useState(1)
@@ -51,7 +51,10 @@ function IndexHeader({ backgroundDark }) {
                         transition: "opacity 0.5s linear",
                     }}
                 />
-                <MyBackgroundImage backgroundOpacity={backgroundOpacity} />
+                <MyBackgroundImage
+                    backgroundOpacity={backgroundOpacity}
+                    setLoaded={setLoaded}
+                />
                 {/* <div
                     className="page-header section-dark"
                     style={{

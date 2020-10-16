@@ -4,14 +4,14 @@ import { graphql, useStaticQuery } from "gatsby"
 
 import Img from "gatsby-image"
 
-export default function MyBackgroundImage({ backgroundOpacity }) {
+export default function MyBackgroundImage({ backgroundOpacity, setLoaded }) {
 
     const data = useStaticQuery(
         graphql`
             query {
                 static: file(relativePath: { eq: "creative-commons-zen.jpg" }) {
                     childImageSharp {
-                        fluid(quality: 45, maxWidth: 1920) {
+                        fluid(quality: 100, maxWidth: 1920) {
                             ...GatsbyImageSharpFluid_withWebp
                         }
                     }
@@ -33,5 +33,6 @@ export default function MyBackgroundImage({ backgroundOpacity }) {
             transition: "opacity 3s linear",
         }}
         fluid={imageData}
+        onLoad={setLoaded(true)}
     ></Img>
 }
