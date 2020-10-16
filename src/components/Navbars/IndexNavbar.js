@@ -244,7 +244,6 @@ function IndexNavbar(props) {
                                             </NavLink>
                                         </NavItem>
                                         <NavItem
-                                            header
                                             className="d-lg-none"
                                             style={{
                                                 display:

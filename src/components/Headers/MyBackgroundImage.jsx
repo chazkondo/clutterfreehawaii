@@ -9,9 +9,30 @@ export default function MyBackgroundImage({ backgroundOpacity, setLoaded }) {
     const data = useStaticQuery(
         graphql`
             query {
-                static: file(relativePath: { eq: "creative-commons-zen.jpg" }) {
+                static1: file(relativePath: { eq: "creative-commons-zen-large.jpg" }) {
                     childImageSharp {
-                        fluid(quality: 50, maxWidth: 1920) {
+                        fluid(quality: 100, maxWidth: 1920) {
+                            ...GatsbyImageSharpFluid_withWebp
+                        }
+                    }
+                }
+                static2: file(relativePath: { eq: "creative-commons-zen.jpg" }) {
+                    childImageSharp {
+                        fluid(quality: 100, maxWidth: 1280) {
+                            ...GatsbyImageSharpFluid_withWebp
+                        }
+                    }
+                }
+                static3: file(relativePath: { eq: "creative-commons-zen-small.jpg" }) {
+                    childImageSharp {
+                        fluid(quality: 100, maxWidth: 640) {
+                            ...GatsbyImageSharpFluid_withWebp
+                        }
+                    }
+                }
+                static4: file(relativePath: { eq: "creative-commons-zen-xs.jpg" }) {
+                    childImageSharp {
+                        fluid(quality: 100, maxWidth: 400) {
                             ...GatsbyImageSharpFluid_withWebp
                         }
                     }
@@ -20,7 +41,21 @@ export default function MyBackgroundImage({ backgroundOpacity, setLoaded }) {
         `
     )
 
-    const imageData = data.static.childImageSharp.fluid
+    const sources = [
+        data.static4.childImageSharp.fluid,
+        {
+            ...data.static3.childImageSharp.fluid,
+            media: `(min-width: 400px)`,
+          },
+        {
+          ...data.static2.childImageSharp.fluid,
+          media: `(min-width: 768px)`,
+        },
+        {
+            ...data.static1.childImageSharp.fluid,
+            media: `(min-width: 1920px)`,
+          },
+      ]
 
     return <Img
         Tag="section"
@@ -32,7 +67,7 @@ export default function MyBackgroundImage({ backgroundOpacity, setLoaded }) {
             opacity: backgroundOpacity,
             transition: "opacity 3s linear",
         }}
-        fluid={imageData}
-        onLoad={setLoaded(true)}
+        fluid={sources}
+        onLoad={()=>setLoaded(true)}
     ></Img>
 }

@@ -42,6 +42,7 @@ function IndexHeader({ backgroundDark }) {
                         alignItems: `center`,
                         backgroundColor: `white`,
                         zIndex: 4,
+                        opacity: 0,
                     }}
                 >
                     <Spinner
