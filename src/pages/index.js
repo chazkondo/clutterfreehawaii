@@ -11,7 +11,6 @@ import Section4 from "../components/Sections/Section4"
 import Section5 from "../components/Sections/Section5"
 
 import LightSwitch from "../components/Buttons/LightSwitch/LightSwitch.jsx"
-import Loading from "../components/Loading/Loading.jsx"
 
 //css
 import "../assets/css/bootstrap.min.css"

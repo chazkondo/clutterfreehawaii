@@ -13,6 +13,7 @@ import rainBackground from "../../assets/img/rain3.png"
 // const HeaderContent = React.lazy(() => import("./HeaderContent"))
 
 import Spinner from "react-spinkit"
+import Loading from "../../components/Loading/Loading.jsx"
 
 function IndexHeader({ backgroundDark }) {
     const [play, pressPlay] = React.useState(false)
@@ -30,6 +31,7 @@ function IndexHeader({ backgroundDark }) {
 
     return (
         <>
+            <Loading loaded={loaded} backgroundDark={backgroundDark} />
             <div
                 style={{
                     height: "100%",

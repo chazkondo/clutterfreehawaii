@@ -1622,6 +1622,13 @@ h6 {
     }
 } 
 
+@media (max-width: 730px) {
+    .headerSpan {
+        width: 200px !important;
+        height: 35px !important;
+    }
+}
+
 @media (max-width: 767.98px) {
     .headerRef {
         top: 25% 
@@ -1671,10 +1678,6 @@ h6 {
     }
     .textUnderlineDiv {
          margin-Left: 7.5%;
-    }
-    .headerSpan {
-        width: 200px !important;
-        height: 35px !important;
     }
     .presentation-subtitle2 {
         display: none
@@ -1779,4 +1782,16 @@ h6 {
     .SectionImages {
         width: 800px
     }
+  }
+
+  .loaderCSS {
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    animation: spin1 2s linear infinite;
+  }
+  
+  @keyframes spin1 {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
   }
