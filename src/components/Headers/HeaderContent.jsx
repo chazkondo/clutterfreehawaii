@@ -9,7 +9,7 @@ import { Container } from "reactstrap"
 // helper
 import useWindowSize from "../Helpers/useWindowSize.js"
 
-export default function HeaderContent({ backgroundOpacity, setBackgroundOpacity, pressPlay, setGroundZeroOpacity }) {
+export default function HeaderContent({ loaded,backgroundOpacity, setBackgroundOpacity, pressPlay, setGroundZeroOpacity }) {
 
     const [opacity, setOpacity] = React.useState(1)
     const [subtext1, setSubtext1] = React.useState(0)
@@ -73,7 +73,7 @@ export default function HeaderContent({ backgroundOpacity, setBackgroundOpacity,
         <Container>
             <motion.div
                 initial="initial"
-                animate="animated"
+                animate={loaded ? "animated" : null}
                 className="title-brand"
                 variants={variants}
                 style={{
@@ -84,9 +84,9 @@ export default function HeaderContent({ backgroundOpacity, setBackgroundOpacity,
                 }}
             >
                 <h1 className="presentation-title">
-                    Clutter Free Hawai'i
+                    {loaded && `Clutter Free Hawai'i`}
                 </h1>
-                <motion.span
+                {loaded && <motion.span
                     className="headerSpan"
                     variants={variants}
                     initial="hidden"
@@ -106,9 +106,9 @@ export default function HeaderContent({ backgroundOpacity, setBackgroundOpacity,
                         right: "10px",
                         transition: "opacity 1s linear",
                     }}
-                />
+                />}
             </motion.div>
-            <ul
+            {loaded && <ul
                 style={{
                     display: "flex",
                     justifyContent: "center",
@@ -192,7 +192,7 @@ export default function HeaderContent({ backgroundOpacity, setBackgroundOpacity,
                         Together.
             </h2>
                 </span>
-            </ul>
+            </ul>}
         </Container>
     )
 }

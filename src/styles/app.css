@@ -1744,18 +1744,11 @@ h6 {
     .loadingAnimation {
         display: none
     }
-    .animationText {
-        color: white;
-        display: block
-    }
   }
 
   @media (min-width: 511px) {
     .loadingAnimation {
         display: block
-    }
-    .animationText {
-        display: none
     }
   }
 

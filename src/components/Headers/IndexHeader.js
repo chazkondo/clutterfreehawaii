@@ -61,7 +61,6 @@ function IndexHeader({ backgroundDark }) {
                             color="white"
                             name="cube-grid"
                         />
-                        <div className="animationText">Loading...</div>
                     </div>
                 )}
                 <MyBackgroundImage
@@ -93,15 +92,14 @@ function IndexHeader({ backgroundDark }) {
 
                 <div className="content-center">
                     {/* <React.Suspense fallback={<div></div>}> */}
-                    {loaded && (
-                        <HeaderContent
-                            backgroundDark={backgroundDark}
-                            backgroundOpacity={backgroundOpacity}
-                            setBackgroundOpacity={setBackgroundOpacity}
-                            setGroundZeroOpacity={setGroundZeroOpacity}
-                            pressPlay={pressPlay}
-                        />
-                    )}
+                    <HeaderContent
+                        loaded={loaded}
+                        backgroundDark={backgroundDark}
+                        backgroundOpacity={backgroundOpacity}
+                        setBackgroundOpacity={setBackgroundOpacity}
+                        setGroundZeroOpacity={setGroundZeroOpacity}
+                        pressPlay={pressPlay}
+                    />
                     {/* </React.Suspense> */}
                 </div>
 
