@@ -114,7 +114,6 @@ function Section5({ backgroundDark }) {
     }
 
     function detectWhere() {
-        console.log('THIS IS GETTING HIT')
         if (entry.intersectionRatio === 1 && exit.intersectionRatio === 1) {
             return true
         } else {
@@ -123,7 +122,6 @@ function Section5({ backgroundDark }) {
     }
 
     function headerDetected() {
-        console.log('THIS IS GETTING HIT1')
         if (header.intersectionRatio === 1 || end.intersectionRatio === 1) {
             return true
         }
@@ -131,7 +129,6 @@ function Section5({ backgroundDark }) {
 
 
     function bottomDetected() {
-        console.log('THIS IS GETTING HIT4')
         if (bottom.intersectionRatio === 1) {
             // setBorderVisible(true)
         } else {

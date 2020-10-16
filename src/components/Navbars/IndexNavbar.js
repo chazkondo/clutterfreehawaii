@@ -83,13 +83,6 @@ function IndexNavbar(props) {
     const toggleSm = () => setSmDropdownOpen(!smDropdownOpen)
 
     const handleClickOutside = (event) => {
-        console.log(
-            wrapperRef.current,
-            `hello?`,
-            event.target,
-            !wrapperRef.current.contains(event.target)
-        )
-
         if (wrapperRef.current && !wrapperRef.current.contains(event.target)) {
             setNavbarCollapse(false)
             document.documentElement.classList.remove(`nav-open`)

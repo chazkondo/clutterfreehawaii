@@ -72,5 +72,6 @@ export default function MyBackgroundImage({ backgroundOpacity, setLoaded }) {
         }}
         fluid={sources}
         onLoad={()=>setLoaded(true)}
+        onStartLoad={({wasCached})=>setTimeout(()=>console.log(wasCached), 2000)}
     ></Img>
 }

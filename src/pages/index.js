@@ -19,7 +19,6 @@ import "../assets/scss/paper-kit.scss?v=1.2.0"
 import "../assets/demo/demo.css?v=1.2.0"
 
 function Index() {
-    const [borderVisible, setBorderVisible] = React.useState(false)
     const [backgroundDark, setBackgroundDark] = React.useState(false)
 
     React.useLayoutEffect(() => {
@@ -33,14 +32,8 @@ function Index() {
             <IndexNavbar showProgressBar backgroundDark={backgroundDark} />
             <IndexHeader backgroundDark={backgroundDark} />
             <div className="main">
-                <Section1
-                    backgroundDark={backgroundDark}
-                    borderVisible={borderVisible}
-                />
-                <Section2
-                    backgroundDark={backgroundDark}
-                    setBorderVisible={setBorderVisible}
-                />
+                <Section1 backgroundDark={backgroundDark} />
+                <Section2 backgroundDark={backgroundDark} />
                 <Section3 backgroundDark={backgroundDark} />
                 <Section4 backgroundDark={backgroundDark} />
                 {/* <Section5 backgroundDark={backgroundDark} /> */}

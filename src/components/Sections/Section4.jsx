@@ -273,7 +273,6 @@ function Section4({ backgroundDark }) {
     }
 
     function detectingHeader() {
-        console.log('THIS IS GETTING HIT1')
         if (header.intersectionRatio === 1 || end.intersectionRatio === 1) {
             function2IsFiring(true)
             return setHeaderDetected(true)

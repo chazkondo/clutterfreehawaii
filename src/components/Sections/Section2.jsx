@@ -5,15 +5,10 @@ import { motion } from 'framer-motion'
 
 import useIntersect from "../Helpers/useIntersect";
 
-function Section2({ setBorderVisible, backgroundDark }) {
+function Section2({ backgroundDark }) {
 
-    const [functionWasFired, functionIsFiring] = React.useState(false)
     const [function2WasFired, function2IsFiring] = React.useState(false)
     const [headerDetected, setHeaderDetected] = React.useState(false)
-
-    const [bottomRef, bottom] = useIntersect({
-        threshold: 1
-    });
 
     const [headerRef, header] = useIntersect({
         threshold: 1
@@ -73,24 +68,14 @@ function Section2({ setBorderVisible, backgroundDark }) {
     }
 
     function detectingHeader() {
-        console.log('THIS IS GETTING HIT1')
         if (header.intersectionRatio === 1 || end.intersectionRatio === 1) {
             function2IsFiring(true)
             return setHeaderDetected(true)
         }
     }
 
-
-    function bottomDetected() {
-        if (bottom.intersectionRatio === 1) {
-            functionIsFiring(true)
-            return setBorderVisible(true)
-        }
-    }
-
     return (
         <>
-            {!functionWasFired && bottomDetected()}
             {!function2WasFired && detectingHeader()}
             <div
                 style={{
@@ -167,7 +152,6 @@ function Section2({ setBorderVisible, backgroundDark }) {
                             </div>
                         </div>
                     </div>
-                    <span style={{ position: 'absolute', top: '0%' }} ref={bottomRef} />
                     <div className="headerRef" ref={headerRef} />
                 </div>
             </div>

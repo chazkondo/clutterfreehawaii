@@ -30,32 +30,6 @@ function IndexHeader({ backgroundDark }) {
 
     return (
         <>
-            {!loaded && (
-                <div
-                    style={{
-                        position: "absolute",
-                        height: `100%`,
-                        width: `100%`,
-                        display: `flex`,
-                        justifyContent: `center`,
-                        alignContent: `center`,
-                        alignItems: `center`,
-                        backgroundColor: `white`,
-                        zIndex: 4,
-                        opacity: 0,
-                    }}
-                >
-                    <Spinner
-                        style={
-                            {
-                                // transform: `scale(3)`,
-                            }
-                        }
-                        // color="black"
-                        name="cube-grid"
-                    />
-                </div>
-            )}
             <div
                 style={{
                     height: "100%",

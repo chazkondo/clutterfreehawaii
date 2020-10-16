@@ -7,12 +7,14 @@ import { motion } from 'framer-motion'
 import useIntersect from "../Helpers/useIntersect";
 
 
-function Section1({ backgroundDark, borderVisible }) {
+function Section1({ backgroundDark }) {
 
     const [functionFired, setFunctionFired] = React.useState(false)
+    const [functionWasFired, functionIsFiring] = React.useState(false)
     const [captionDetected, setCaptionDetected] = React.useState(false)
     const [function2Fired, setFunction2Fired] = React.useState(false)
     const [headerDetected, setHeaderDetected] = React.useState(false)
+    const [borderVisible, setBorderVisible] = React.useState(false)
     // const [headerInVision, setHeaderInVision] = React.useState(false)
     // const [function3Fired, setFunction3Fired] = React.useState(false)
 
@@ -25,6 +27,10 @@ function Section1({ backgroundDark, borderVisible }) {
     });
 
     const [captionRef, caption] = useIntersect({
+        threshold: 1
+    });
+
+    const [bottomRef, bottom] = useIntersect({
         threshold: 1
     });
 
@@ -92,7 +98,6 @@ function Section1({ backgroundDark, borderVisible }) {
     }
 
     function toggleHighlightsOn() {
-        console.log(caption, 'THIS IS GETTING HIT')
         if (caption.intersectionRatio === 1 && exit.intersectionRatio === 1) {
             return isVisible = true
         } else {
@@ -101,7 +106,6 @@ function Section1({ backgroundDark, borderVisible }) {
     }
 
     function detectingHeader() {
-        console.log('THIS IS GETTING HIT1')
         if (header.intersectionRatio === 1 || caption.intersectionRatio === 1) {
             setFunction2Fired(true)
             return setHeaderDetected(true)
@@ -109,10 +113,16 @@ function Section1({ backgroundDark, borderVisible }) {
     }
 
     function detectingCaption() {
-        console.log('THIS IS GETTING HIT3')
         if (caption.intersectionRatio === 1) {
             setFunctionFired(true)
             return setCaptionDetected(true)
+        }
+    }
+
+    function bottomDetected() {
+        if (bottom.intersectionRatio === 1) {
+            functionIsFiring(true)
+            return setBorderVisible(true)
         }
     }
 
@@ -128,6 +138,7 @@ function Section1({ backgroundDark, borderVisible }) {
     return (
         <>
             {toggleHighlightsOn()}
+            {!functionWasFired && bottomDetected()}
             <span ref={exitRef} />
             <div className={backgroundDark ? "section1Dark balanceDiv" : "section1 balanceDiv"}>
                 <div className={backgroundDark ? "sectionOverlayDark" : "sectionOverlay"} />
@@ -304,6 +315,8 @@ function Section1({ backgroundDark, borderVisible }) {
                     textAlign: 'center'
                 }}>
                 </div>
+                <div style={{ position: 'absolute', bottom: '-25%' }} ref={bottomRef} />
+
             </div>
             {/* <div style={{ border: '2px solid green', width: '100%', height: '100%', display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}> */}
             {/* </div> */}
