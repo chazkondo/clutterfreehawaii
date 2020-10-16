@@ -31,30 +31,31 @@ function Index() {
 
     return (
         <>
-            <Loading loaded={loaded} />
-            <IndexNavbar showProgressBar backgroundDark={backgroundDark} />
-            <IndexHeader
-                backgroundDark={backgroundDark}
-                setLoaded={setLoaded}
-            />
-            <div className="main">
-                <Section1
+            <Loading loaded={loaded}>
+                <IndexNavbar showProgressBar backgroundDark={backgroundDark} />
+                <IndexHeader
                     backgroundDark={backgroundDark}
-                    borderVisible={borderVisible}
+                    setLoaded={setLoaded}
                 />
-                <Section2
+                <div className="main">
+                    <Section1
+                        backgroundDark={backgroundDark}
+                        borderVisible={borderVisible}
+                    />
+                    <Section2
+                        backgroundDark={backgroundDark}
+                        setBorderVisible={setBorderVisible}
+                    />
+                    <Section3 backgroundDark={backgroundDark} />
+                    <Section4 backgroundDark={backgroundDark} />
+                    {/* <Section5 backgroundDark={backgroundDark} /> */}
+                </div>
+                <LightSwitch
                     backgroundDark={backgroundDark}
-                    setBorderVisible={setBorderVisible}
+                    setBackgroundDark={setBackgroundDark}
                 />
-                <Section3 backgroundDark={backgroundDark} />
-                <Section4 backgroundDark={backgroundDark} />
-                {/* <Section5 backgroundDark={backgroundDark} /> */}
-            </div>
-            <LightSwitch
-                backgroundDark={backgroundDark}
-                setBackgroundDark={setBackgroundDark}
-            />
-            <Footer backgroundDark={backgroundDark} />
+                <Footer backgroundDark={backgroundDark} />
+            </Loading>
         </>
     )
 }
