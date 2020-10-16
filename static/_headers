@@ -9,15 +9,6 @@
 # These are default recommended security headers, for Netlify
 # https://www.netlify.com/docs/headers-and-basic-auth/
 
-*png
-  Cache-Control: public, max-age=31536000, immutable
-
-*css
-  Cache-Control: public, max-age=31536000, immutable
-
-*webp
-  Cache-Control: public, max-age=31536000, immutable
-
 /*
   Referrer-Policy: no-referrer-when-downgrade
   Strict-Transport-Security: max-age=31536000

@@ -7,7 +7,7 @@ import { Divider } from "../Dividers/Divider.jsx"
 import HeaderContent from "../Headers/HeaderContent.jsx"
 import MyBackgroundImage from "./MyBackgroundImage.jsx"
 
-// import zenBackground from "../../assets/img/creative-commons-zen.jpg"
+import zenBackground from "../../assets/img/creative-commons-zen.jpg"
 import rainBackground from "../../assets/img/rain3.png"
 
 // import BackgroundImage from "gatsby-background-image"
@@ -18,13 +18,13 @@ function IndexHeader({ backgroundDark }) {
     const [backgroundOpacity, setBackgroundOpacity] = React.useState(0.94)
     const [groundZeroOpacity, setGroundZeroOpacity] = React.useState(1)
 
-    // const [mybackground, setMybackground] = React.useState(
-    //     `url(${zenBackground})`
-    // )
+    const [mybackground, setMybackground] = React.useState(
+        `url(${zenBackground})`
+    )
 
-    // React.useLayoutEffect(() => {
-    //     setMybackground(`url(${zenBackground})`)
-    // })
+    React.useLayoutEffect(() => {
+        setMybackground(`url(${zenBackground})`)
+    })
 
     return (
         <>
@@ -52,17 +52,17 @@ function IndexHeader({ backgroundDark }) {
                         transition: "opacity 0.5s linear",
                     }}
                 />
-                <MyBackgroundImage backgroundOpacity={backgroundOpacity} />
-                {/* <div
-                                className="page-header section-dark"
-                                style={{
-                                    position: "absolute",
-                                    backgroundImage: mybackground,
-                                    backgroundColor: "rgba(255,255,255,1)",
-                                    opacity: backgroundOpacity,
-                                    transition: "opacity 3s linear",
-                                }}
-                            ></div> */}
+                {/* <MyBackgroundImage backgroundOpacity={backgroundOpacity} /> */}
+                <div
+                    className="page-header section-dark"
+                    style={{
+                        position: "absolute",
+                        backgroundImage: mybackground,
+                        backgroundColor: "rgba(255,255,255,1)",
+                        opacity: backgroundOpacity,
+                        transition: "opacity 3s linear",
+                    }}
+                ></div>
                 {backgroundDark && (
                     <div
                         className="rain"
