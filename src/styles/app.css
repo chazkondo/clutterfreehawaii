@@ -1741,6 +1741,22 @@ h6 {
     /* .bottomSVG {
         top: 60px !important;
     } */
+    .loadingAnimation {
+        display: none
+    }
+    .animationText {
+        color: white;
+        display: block
+    }
+  }
+
+  @media (min-width: 511px) {
+    .loadingAnimation {
+        display: block
+    }
+    .animationText {
+        display: none
+    }
   }
 
   @media (max-width: 360px) {

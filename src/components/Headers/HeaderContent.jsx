@@ -6,11 +6,16 @@ import { motion } from "framer-motion"
 // reactstrap components
 import { Container } from "reactstrap"
 
-export default function HeaderContent({ backgroundDark, backgroundOpacity, setBackgroundOpacity, pressPlay, setGroundZeroOpacity }) {
+// helper
+import useWindowSize from "../Helpers/useWindowSize.js"
+
+export default function HeaderContent({ backgroundOpacity, setBackgroundOpacity, pressPlay, setGroundZeroOpacity }) {
 
     const [opacity, setOpacity] = React.useState(1)
     const [subtext1, setSubtext1] = React.useState(0)
     const [subtext2, setSubtext2] = React.useState(0)
+    const size = useWindowSize()
+    console.log(size.width)
 
     const variants = {
         hidden: {
@@ -22,7 +27,7 @@ export default function HeaderContent({ backgroundDark, backgroundOpacity, setBa
             transition: { delay: 0, duration: 1.5, ease: `easeInOut` },
         },
         initial: {
-            y: 100,
+            y: size.width < 511 ? 0 : 100,
         },
         animated: {
             y: 0,

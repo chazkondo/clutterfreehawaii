@@ -55,14 +55,14 @@ function IndexHeader({ backgroundDark }) {
                     }}
                 />
                 {!loaded && (
-                    <Spinner
-                        style={{
-                            position: "absolute",
-                            zIndex: 4,
-                        }}
-                        color="white"
-                        name="cube-grid"
-                    />
+                    <div style={{ position: "absolute", zIndex: 4 }}>
+                        <Spinner
+                            className="loadingAnimation"
+                            color="white"
+                            name="cube-grid"
+                        />
+                        <div className="animationText">Loading...</div>
+                    </div>
                 )}
                 <MyBackgroundImage
                     backgroundOpacity={backgroundOpacity}
