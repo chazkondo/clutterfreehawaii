@@ -33,6 +33,6 @@ export default function MyBackgroundImage({ backgroundOpacity, setLoaded }) {
             transition: "opacity 3s linear",
         }}
         fluid={imageData}
-        // onLoad={setLoaded(true)}
+        onLoad={setLoaded(true)}
     ></Img>
 }

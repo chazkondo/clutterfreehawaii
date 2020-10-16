@@ -31,12 +31,15 @@ function Index() {
 
     return (
         <>
-            <Loading loaded={loaded}>
+            <Loading loaded={true} />
+            {loaded && (
                 <IndexNavbar showProgressBar backgroundDark={backgroundDark} />
-                <IndexHeader
-                    backgroundDark={backgroundDark}
-                    setLoaded={setLoaded}
-                />
+            )}
+            <IndexHeader
+                backgroundDark={backgroundDark}
+                setLoaded={setLoaded}
+            />
+            {loaded && (
                 <div className="main">
                     <Section1
                         backgroundDark={backgroundDark}
@@ -50,12 +53,14 @@ function Index() {
                     <Section4 backgroundDark={backgroundDark} />
                     {/* <Section5 backgroundDark={backgroundDark} /> */}
                 </div>
+            )}
+            {loaded && (
                 <LightSwitch
                     backgroundDark={backgroundDark}
                     setBackgroundDark={setBackgroundDark}
                 />
-                <Footer backgroundDark={backgroundDark} />
-            </Loading>
+            )}
+            {loaded && <Footer backgroundDark={backgroundDark} />}
         </>
     )
 }
