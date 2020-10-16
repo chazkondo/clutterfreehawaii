@@ -20,9 +20,11 @@ export default function HeaderContent({ loaded,backgroundOpacity, setBackgroundO
     const variants = {
         hidden: {
             width: "0px",
+            height: size.width < 767 ? "35px" : "57px", 
         },
         visible: {
-            width: "330px",
+            width: size.width < 767 ? "200px" : "330px",
+            height: size.width < 767 ? "35px" : "57px",
             rotate: 0,
             transition: { delay: 0, duration: 1.5, ease: `easeInOut` },
         },
@@ -37,14 +39,19 @@ export default function HeaderContent({ loaded,backgroundOpacity, setBackgroundO
 
     // Header Subtext Delay
     React.useEffect(() => {
-        const timeout1 = setTimeout(() => setSubtext1(1), 1000)
-        const timeout2 = setTimeout(() => setSubtext2(1), 2000)
+        let timeout1
+        let timeout2
+
+        if (loaded) {
+            timeout1 = setTimeout(() => setSubtext1(1), 1000)
+            timeout2 = setTimeout(() => setSubtext2(1), 2000)
+        }
 
         return () => {
             clearTimeout(timeout1)
             return clearTimeout(timeout2)
         }
-    }, [])
+    }, [loaded])
 
     React.useEffect(() => {
         let startTimeout
@@ -86,11 +93,11 @@ export default function HeaderContent({ loaded,backgroundOpacity, setBackgroundO
                 <h1 className="presentation-title">
                     {size.width < 511 ? `Clutter Free Hawai'i` : (loaded && `Clutter Free Hawai'i`)}
                 </h1>
-                {loaded && <motion.span
+                <motion.span
                     className="headerSpan"
                     variants={variants}
                     initial="hidden"
-                    animate="visible"
+                    animate={size.width < 767 ? null : (loaded && "visible")}
                     style={{
                         opacity: backgroundOpacity,
                         zIndex: "-1",
@@ -100,15 +107,16 @@ export default function HeaderContent({ loaded,backgroundOpacity, setBackgroundO
                         display: "block",
                         background: "rgba(16, 21, 16, 0.7)",
                         display: "block",
-                        height: "57px",
                         borderRadius: "1px",
                         margin: "0 auto",
                         right: "10px",
                         transition: "opacity 1s linear",
+                        width: "330px",
+                        height: "57px",
                     }}
-                />}
+                />
             </motion.div>
-            {loaded && <ul
+            <ul
                 style={{
                     display: "flex",
                     justifyContent: "center",
@@ -132,7 +140,7 @@ export default function HeaderContent({ loaded,backgroundOpacity, setBackgroundO
                             transition: "opacity 1s ease-out",
                         }}
                     >
-                        Simply{"\u00A0"}
+                        {size.width < 511 ? `Simply${"\u00A0"}` : (loaded && `Simply${"\u00A0"}`)}
                     </h2>
                     <h2
                         className="overlap2 presentation-subtitle2 text-center"
@@ -141,7 +149,7 @@ export default function HeaderContent({ loaded,backgroundOpacity, setBackgroundO
                             transition: "opacity 2s ease-out",
                         }}
                     >
-                        Simply{"\u00A0"}
+                        {loaded && `Simply${"\u00A0"}`}
                     </h2>
                     <h2
                         className="overlap2 presentation-subtitle3 text-center"
@@ -150,7 +158,7 @@ export default function HeaderContent({ loaded,backgroundOpacity, setBackgroundO
                             transition: "opacity 3s ease-out",
                         }}
                     >
-                        Simply{"\u00A0"}
+                        {loaded && `Simply${"\u00A0"}`}
                     </h2>
                 </span>
                 <span
@@ -171,7 +179,7 @@ export default function HeaderContent({ loaded,backgroundOpacity, setBackgroundO
                             transition: "opacity 1s ease-out",
                         }}
                     >
-                        Together.
+                        {size.width < 511 ? `Together.` : (loaded && `Together.`)}
             </h2>
                     <h2
                         className="overlap2 presentation-subtitle2 text-center"
@@ -180,7 +188,7 @@ export default function HeaderContent({ loaded,backgroundOpacity, setBackgroundO
                             transition: "opacity 2s ease-out",
                         }}
                     >
-                        Together.
+                        {loaded && `Together.`}
             </h2>
                     <h2
                         className="overlap2 presentation-subtitle3 text-center"
@@ -189,10 +197,10 @@ export default function HeaderContent({ loaded,backgroundOpacity, setBackgroundO
                             transition: "opacity 3s ease-out",
                         }}
                     >
-                        Together.
+                        {loaded && `Together.`}
             </h2>
                 </span>
-            </ul>}
+            </ul>
         </Container>
     )
 }
