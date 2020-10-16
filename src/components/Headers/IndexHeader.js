@@ -12,6 +12,8 @@ import rainBackground from "../../assets/img/rain3.png"
 
 // const HeaderContent = React.lazy(() => import("./HeaderContent"))
 
+import Spinner from "react-spinkit"
+
 function IndexHeader({ backgroundDark }) {
     const [play, pressPlay] = React.useState(false)
     const [backgroundOpacity, setBackgroundOpacity] = React.useState(0.94)
@@ -28,6 +30,31 @@ function IndexHeader({ backgroundDark }) {
 
     return (
         <>
+            {!loaded && (
+                <div
+                    style={{
+                        position: "absolute",
+                        height: `100%`,
+                        width: `100%`,
+                        display: `flex`,
+                        justifyContent: `center`,
+                        alignContent: `center`,
+                        alignItems: `center`,
+                        backgroundColor: `white`,
+                        zIndex: 4,
+                    }}
+                >
+                    <Spinner
+                        style={
+                            {
+                                // transform: `scale(3)`,
+                            }
+                        }
+                        // color="black"
+                        name="cube-grid"
+                    />
+                </div>
+            )}
             <div
                 style={{
                     height: "100%",

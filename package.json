@@ -75,6 +75,7 @@
     "react-intersection-observer": "^8.28.5",
     "react-player": "^2.6.2",
     "react-scroll-parallax": "^2.3.4",
+    "react-spinkit": "^3.0.0",
     "reactstrap": "^8.5.1",
     "styled-components": "^5.2.0"
   }
