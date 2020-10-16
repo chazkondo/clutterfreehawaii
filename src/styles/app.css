@@ -793,10 +793,12 @@ h6 {
     transition: transform .22s;
 }
 
-.post-card:hover {
-    text-decoration: none;
-    transform: scale(1.1);
-}
+@media (hover: hover) {
+    .post-card:hover {
+        text-decoration: none;
+        transform: scale(1.1);
+    }
+  }
 
 .post-card-tags {
     margin: 0 0 5px 0;

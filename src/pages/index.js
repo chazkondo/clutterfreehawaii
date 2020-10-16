@@ -21,7 +21,6 @@ import "../assets/demo/demo.css?v=1.2.0"
 function Index() {
     const [borderVisible, setBorderVisible] = React.useState(false)
     const [backgroundDark, setBackgroundDark] = React.useState(false)
-    const [loaded, setLoaded] = React.useState(false)
 
     React.useLayoutEffect(() => {
         const hours = new Date().getHours()
@@ -32,11 +31,7 @@ function Index() {
     return (
         <>
             <IndexNavbar showProgressBar backgroundDark={backgroundDark} />
-            <IndexHeader
-                backgroundDark={backgroundDark}
-                loaded={loaded}
-                setLoaded={setLoaded}
-            />
+            <IndexHeader backgroundDark={backgroundDark} />
             <div className="main">
                 <Section1
                     backgroundDark={backgroundDark}

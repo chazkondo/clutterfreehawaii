@@ -12,10 +12,11 @@ import rainBackground from "../../assets/img/rain3.png"
 
 // const HeaderContent = React.lazy(() => import("./HeaderContent"))
 
-function IndexHeader({ backgroundDark, setLoaded, loaded }) {
+function IndexHeader({ backgroundDark }) {
     const [play, pressPlay] = React.useState(false)
     const [backgroundOpacity, setBackgroundOpacity] = React.useState(0.94)
     const [groundZeroOpacity, setGroundZeroOpacity] = React.useState(1)
+    const [loaded, setLoaded] = React.useState(false)
 
     // const [mybackground, setMybackground] = React.useState(
     //     `url(${zenBackground})`
