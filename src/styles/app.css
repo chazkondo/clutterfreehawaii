@@ -1747,12 +1747,22 @@ h6 {
     .loadingAnimation {
         display: none
     }
+    .loaderCSS {
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        animation: spin1 2s linear infinite;
+        position: absolute
+      }
   }
 
   @media (min-width: 511px) {
     .loadingAnimation {
         display: block
     }
+    .loaderCSS {
+        display: none
+      }
   }
 
   @media (max-width: 360px) {
@@ -1782,13 +1792,6 @@ h6 {
     .SectionImages {
         width: 800px
     }
-  }
-
-  .loaderCSS {
-    border-radius: 50%;
-    width: 30px;
-    height: 30px;
-    animation: spin1 2s linear infinite;
   }
   
   @keyframes spin1 {

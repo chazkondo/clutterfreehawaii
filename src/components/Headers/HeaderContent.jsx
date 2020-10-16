@@ -88,11 +88,11 @@ export default function HeaderContent({ loaded, size, backgroundOpacity, setBack
                 <h1 className="presentation-title">
                     {size.width < 511 ? `Clutter Free Hawai'i` : (loaded && `Clutter Free Hawai'i`)}
                 </h1>
-                <motion.span
+                {loaded && <motion.span
                     className="headerSpan"
                     variants={variants}
                     initial="hidden"
-                    animate={size.width < 767 ? null : (loaded && "visible")}
+                    animate="visible"
                     style={{
                         opacity: backgroundOpacity,
                         zIndex: "-1",
@@ -109,7 +109,7 @@ export default function HeaderContent({ loaded, size, backgroundOpacity, setBack
                         width: "330px",
                         height: "57px",
                     }}
-                />
+                />}
             </motion.div>
             <ul
                 style={{
