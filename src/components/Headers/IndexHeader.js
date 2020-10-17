@@ -7,7 +7,7 @@ import { Divider } from "../Dividers/Divider.jsx"
 import HeaderContent from "../Headers/HeaderContent.jsx"
 import MyBackgroundImage from "./MyBackgroundImage.jsx"
 
-import zenBackground from "../../assets/img/creative-commons-zen.jpg"
+// import zenBackground from "../../assets/img/creative-commons-zen.jpg"
 import rainBackground from "../../assets/img/rain3.png"
 
 // const HeaderContent = React.lazy(() => import("./HeaderContent"))

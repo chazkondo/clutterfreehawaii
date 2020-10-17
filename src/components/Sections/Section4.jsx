@@ -192,8 +192,9 @@ import React from "react"
 
 import { motion } from 'framer-motion'
 
-
 import useIntersect from "../Helpers/useIntersect";
+import { graphql, useStaticQuery } from "gatsby"
+import Img from "gatsby-image"
 
 function Section4({ backgroundDark }) {
 
@@ -216,6 +217,10 @@ function Section4({ backgroundDark }) {
     const variants = {
         hidden: {
             width: "0px",
+        },
+        test: {
+            width: "100%",
+            transition: { delay: 0, duration: 2, ease: `easeInOut` },
         },
         faded: {
             opacity: 0,
@@ -279,6 +284,21 @@ function Section4({ backgroundDark }) {
         }
     }
 
+    const data = useStaticQuery(
+        graphql`
+            query {
+                static: file(relativePath: { eq: "cozy.png" }) {
+                    childImageSharp {
+                        fluid(quality: 100, maxWidth: 1000) {
+                            ...GatsbyImageSharpFluid_withWebp,
+                            tracedSVG
+                        }
+                    }
+                }
+            }
+        `
+    )
+
 
     return (
         <>
@@ -333,11 +353,16 @@ function Section4({ backgroundDark }) {
                 }}>
                     <div className="SectionContainers">
                         <div className="SectionImages">
-                            <motion.img
+                        <motion.div
                                 animate={headerDetected ? 'unfadedFaster' : 'faded'}
                                 variants={variants}
-                                style={{ width: '100%', }} src={
-                                    require("../../assets/img/cozy.png")} alt="" />
+                                style={{ width: '100%' }} 
+                            >
+                            <Img
+                                className="SectionImage"
+                                fluid={data.static.childImageSharp.fluid}
+                                alt="" />
+                            </motion.div>
                         </div>
                         <div className="SectionTextContainers">
                             <div style={{
@@ -377,6 +402,15 @@ function Section4({ backgroundDark }) {
                                     <motion.h2
                                         animate={headerDetected ? 'unfadedFaster' : 'faded'} variants={variants}
                                         style={{ color: backgroundDark ? 'white' : 'black', letterSpacing: '-0.28rem', paddingTop: '1.5%', marginTop: 0, paddingBottom: '10%' }}>Result-Focused.</motion.h2>
+                                                                                <motion.div 
+                                        initial="hidden"
+                                        animate={headerDetected && 'test'}
+                                        variants={variants}
+                                        style={{}}>
+                                        <div className="colorLine" style={{display: 'inline-block', position: 'relative', bottom: '15px', backgroundColor: 'lightblue', opacity: 0.8, height: '3px'}}/>
+                                        <div className="colorLine" style={{display: 'inline-block', position: 'relative', bottom: '15px', backgroundColor: 'mediumspringgreen', opacity: 0.5, height: '3px'}}/>
+                                        <div className="colorLine" style={{display: 'inline-block', position: 'relative', bottom: '15px', backgroundColor: 'orangered', opacity: 0.6, height: '3px'}}/>
+                                        </motion.div>
                                     <h5 style={{ color: backgroundDark ? 'white' : 'black' }} >At Clutter Free Hawai’i, our passion is to contribute to a unique and sustainable island community. We strive to be the innovative leader in the industries we serve, creating strong relationships with our valued clients and giving forward to the community.</h5>
                                     <div className="textUnderlineDiv balanceSpan2" />
                                     <div

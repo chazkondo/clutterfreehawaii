@@ -1569,7 +1569,7 @@ h6 {
     content: '';
      margin-Top: 10%;
      width: 85%;
-     height: 3px;
+     height: 2px;
      background: rgba(221, 238, 211, 0.6)
   }
 
@@ -1588,6 +1588,14 @@ h6 {
 
     .bottomSVG {
         top: 390px
+    }
+
+    .SectionImage {
+        border-radius: 30px
+    }
+
+    .colorLine {
+        width: 18%
     }
 
 @media (min-width: 1370px) {
@@ -1620,6 +1628,9 @@ h6 {
         /* color: green !important;
         background-color: green !important; */
     }
+    .colorLine {
+        width: 22%
+    }
 } 
 
 @media (max-width: 730px) {
@@ -1630,6 +1641,9 @@ h6 {
 }
 
 @media (max-width: 767.98px) {
+    .colorLine {
+        width: 18%
+    }
     .headerRef {
         top: 25% 
     }
@@ -1770,6 +1784,12 @@ h6 {
         display: none
     }
     .bottomSVG {
+        display: none
+    }
+  }
+
+  @media (max-width: 305px) {
+    .SectionImage {
         display: none
     }
   }
