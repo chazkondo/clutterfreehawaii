@@ -3,6 +3,10 @@ const path = require(`path`)
 const config = require(`./src/utils/siteConfig`)
 const generateRSSFeed = require(`./src/utils/rss/generate-feed`)
 
+require(`dotenv`).config({
+    path: `.env.${process.env.NODE_ENV}`,
+})
+
 let ghostConfig
 
 try {
@@ -12,6 +16,10 @@ try {
         production: {
             apiUrl: process.env.GHOST_API_URL,
             contentApiKey: process.env.GHOST_CONTENT_API_KEY,
+        },
+        development: {
+            apiUrl: process.env.GHOST_API_URL_DEVELOPMENT,
+            contentApiKey: process.env.GHOST_CONTENT_API_KEY_DEVELOPMENT,
         },
     }
 } finally {

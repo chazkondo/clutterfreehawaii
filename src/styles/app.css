@@ -1642,7 +1642,8 @@ h6 {
 
 @media (max-width: 767.98px) {
     .colorLine {
-        width: 18%
+        width: 18%;
+        height: 2px !important;
     }
     .headerRef {
         top: 25% 
