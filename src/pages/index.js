@@ -26,7 +26,7 @@ import { Helmet } from "react-helmet"
 function Index() {
     const [backgroundDark, setBackgroundDark] = React.useState(false)
     const size = useWindowSize()
-    const title = `Clutter Free. Zero Stress. Your local hero.`
+    const title = `Clutter Free. Zero Stress. Your Local Hero.`
 
     React.useLayoutEffect(() => {
         const hours = new Date().getHours()
@@ -62,7 +62,7 @@ function Index() {
                 <meta name="twitter:creator" content="@DevinLonso" />
                 <meta
                     name="twitter:image"
-                    content="https://clutterfreehawaii.com/snap.png"
+                    content="https://clutterfreehawaii.com/organized.png"
                 />
                 <meta
                     name="viewport"
