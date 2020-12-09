@@ -3,7 +3,6 @@
 // import { Container } from 'reactstrap'
 // import { motion, useViewportScroll } from 'framer-motion'
 
-
 // import useIntersect from "../Helpers/useIntersect";
 // import { FadeBox, WidthBox } from "../Helpers/boxes";
 // import styled from "styled-components";
@@ -48,7 +47,6 @@
 //             .toString(16)
 //             .padStart(3, "0")
 //     );
-
 
 // function Section4({ backgroundDark }) {
 
@@ -129,7 +127,6 @@
 //         }
 //     }
 
-
 //     function bottomDetected() {
 //         console.log('THIS IS GETTING HIT4')
 //         if (bottom.intersectionRatio === 1) {
@@ -190,44 +187,43 @@
 
 import React from "react"
 
-import { motion } from 'framer-motion'
+import { motion } from "framer-motion"
 
-import useIntersect from "../Helpers/useIntersect";
+import useIntersect from "../Helpers/useIntersect"
 import { graphql, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
 
 function Section4({ backgroundDark }) {
-
     const [functionWasFired, functionIsFiring] = React.useState(false)
     const [function2WasFired, function2IsFiring] = React.useState(false)
     const [headerDetected, setHeaderDetected] = React.useState(false)
 
     const [bottomRef, bottom] = useIntersect({
-        threshold: 1
-    });
+        threshold: 1,
+    })
 
     const [headerRef, header] = useIntersect({
-        threshold: 1
-    });
+        threshold: 1,
+    })
 
     const [endRef, end] = useIntersect({
-        threshold: 1
-    });
+        threshold: 1,
+    })
 
     const variants = {
         hidden: {
-            width: "0px",
+            width: `0px`,
         },
         test: {
-            width: "100%",
+            width: `100%`,
             transition: { delay: 0, duration: 2, ease: `easeInOut` },
         },
         faded: {
             opacity: 0,
         },
         hiddenAndFaded: {
-            width: "0px",
-            opacity: 0
+            width: `0px`,
+            opacity: 0,
         },
         unfaded: {
             opacity: 1,
@@ -248,28 +244,28 @@ function Section4({ backgroundDark }) {
             transition: { delay: 0, duration: 0.7, ease: `easeInOut` },
         },
         atmosphere: {
-            width: "95%",
+            width: `95%`,
             rotate: 0,
             transition: { delay: 0, duration: 0.7, ease: `easeInOut` },
         },
         aesthetics: {
-            width: "187px",
+            width: `187px`,
             rotate: 0,
             transition: { delay: 0.5, duration: 0.7, ease: `easeInOut` },
         },
         action: {
-            width: "135px",
+            width: `135px`,
             rotate: 0,
             transition: { delay: 1, duration: 0.7, ease: `easeInOut` },
         },
         invisible: {
-            width: "0px",
+            width: `0px`,
             rotate: 0,
             transition: { delay: 0, duration: 0.7, ease: `easeInOut` },
         },
         bottom: {
-            position: 'relative',
-            top: "100px"
+            position: `relative`,
+            top: `100px`,
         },
         top: {
             top: 0,
@@ -290,7 +286,7 @@ function Section4({ backgroundDark }) {
                 static: file(relativePath: { eq: "cozy.png" }) {
                     childImageSharp {
                         fluid(quality: 100, maxWidth: 1000) {
-                            ...GatsbyImageSharpFluid_withWebp,
+                            ...GatsbyImageSharpFluid_withWebp
                             tracedSVG
                         }
                     }
@@ -299,27 +295,35 @@ function Section4({ backgroundDark }) {
         `
     )
 
-
     return (
         <>
             {!function2WasFired && detectingHeader()}
             <div
-                className={backgroundDark ? "section1Dark" : "section1"}
+                className={backgroundDark ? `section1Dark` : `section1`}
                 style={{
-                    display: 'flex', justifyItems: 'center',
-                    justifyContent: 'center',
-                    alignContent: 'center',
-                    alignItems: 'center',
+                    display: `flex`,
+                    justifyItems: `center`,
+                    justifyContent: `center`,
+                    alignContent: `center`,
+                    alignItems: `center`,
                 }}
             >
                 <motion.svg
                     variants={variants}
                     initial="faded"
-                    animate={"lessFaded"}
+                    animate={`lessFaded`}
                     className="section3Divider"
-                    style={{ zIndex: backgroundDark ? '0' : '-2' }} width="100%" height="640pt" version="1.0" viewBox="0 0 1280 640" xmlns="http://www.w3.org/2000/svg">
+                    style={{ zIndex: backgroundDark ? `0` : `-2` }}
+                    width="100%"
+                    height="640pt"
+                    version="1.0"
+                    viewBox="0 0 1280 640"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
                     <g
-                        fill={backgroundDark ? "white" : "green"} transform="translate(0 640) scale(.1 -.1)">
+                        fill={backgroundDark ? `white` : `green`}
+                        transform="translate(0 640) scale(.1 -.1)"
+                    >
                         {/* <path d="m323 3303c-18-6-16-48 2-84 9-16 34-43 57-59 42-31 115-56 126-45 10 10-46 109-82 144-32 31-80 52-103 44z" /> */}
                         <path d="m12436 3299c-41-11-99-71-126-130-13-27-21-51-18-54 10-10 108 26 138 51 36 31 60 73 60 107 0 30-15 37-54 26z" />
                         {/* <path d="m5040 3164c0-29 9-45 55-93 58-61 67-84 38-99-23-12-42-5-73 24-57 52-120 36-215-55-42-40-53-56-44-62 8-4 43-31 79-59 59-48 67-52 106-47 26 2 60 17 87 37 87 62 117 16 38-58-49-46-51-50-51-100 0-29 3-52 7-52s28 21 54 46c39 39 56 48 100 55 85 13 124 71 84 123-33 44-12 58 44 30 40-20 85-7 127 37 33 35 28 51-27 81-40 22-80 18-121-12-15-11-32-20-38-20-15 0-12 36 5 50 21 18 19 66-5 90-13 13-33 20-61 20-52 0-96 21-139 65-19 19-38 35-42 35s-8-16-8-36z" /> */}
@@ -343,82 +347,182 @@ function Section4({ backgroundDark }) {
                         <path d="m8186 2457c-54-120-57-239-9-277 33-26 56-25 88 3 35 29 42 85 21 166-19 76-55 161-68 161-5 0-20-24-32-53z" />
                     </g>
                 </motion.svg>
-                <div className={backgroundDark ? "sectionOverlayDark" : "sectionOverlay"} />
-                <div style={{
-                    display: 'flex', justifyItems: 'center',
-                    justifyContent: 'center',
-                    alignContent: 'center',
-                    alignItems: 'center', textAlign: 'center',
-                    height: '100%'
-                }}>
+                <div
+                    className={
+                        backgroundDark ? `sectionOverlayDark` : `sectionOverlay`
+                    }
+                />
+                <div
+                    style={{
+                        display: `flex`,
+                        justifyItems: `center`,
+                        justifyContent: `center`,
+                        alignContent: `center`,
+                        alignItems: `center`,
+                        textAlign: `center`,
+                        height: `100%`,
+                    }}
+                >
                     <div className="SectionContainers">
                         <div className="SectionImages">
-                        <motion.div
-                                animate={headerDetected ? 'unfadedFaster' : 'faded'}
+                            <motion.div
+                                animate={
+                                    headerDetected ? `unfadedFaster` : `faded`
+                                }
                                 variants={variants}
-                                style={{ width: '100%' }} 
+                                style={{ width: `100%` }}
                             >
-                            <Img
-                                className="SectionImage"
-                                fluid={data.static.childImageSharp.fluid}
-                                alt="" />
+                                <Img
+                                    className="SectionImage"
+                                    fluid={data.static.childImageSharp.fluid}
+                                    alt=""
+                                />
                             </motion.div>
                         </div>
                         <div className="SectionTextContainers">
-                            <div style={{
-                                // backgroundColor: 'blue',
-                                width: '100%', height: '100%', display: 'flex',
-                                flexDirection: 'row',
-                                justifyItems: 'center',
-                                justifyContent: 'center',
-                                // alignContent: 'center',
-                                alignItems: 'center',
-                            }}>
+                            <div
+                                style={{
+                                    // backgroundColor: 'blue',
+                                    width: `100%`,
+                                    height: `100%`,
+                                    display: `flex`,
+                                    flexDirection: `row`,
+                                    justifyItems: `center`,
+                                    justifyContent: `center`,
+                                    // alignContent: 'center',
+                                    alignItems: `center`,
+                                }}
+                            >
                                 <span
                                     className="balanceSpan2"
                                     style={{
-                                        content: ' ',
+                                        content: ` `,
                                         // backgroundColor: 'green',
-                                        width: '10%', height: '100 % ',
-                                        flexDirection: 'row',
-                                        justifyItems: 'center',
-                                        justifyContent: 'center',
+                                        width: `10%`,
+                                        height: `100 % `,
+                                        flexDirection: `row`,
+                                        justifyItems: `center`,
+                                        justifyContent: `center`,
                                         // alignContent: 'center',
-                                        alignItems: 'center',
-                                    }} />
-                                <div style={{
-                                    content: ' ',
-                                    // backgroundColor: 'red',
-                                    width: '80%', height: '100 % ',
-                                    flexDirection: 'row',
-                                    justifyItems: 'center',
-                                    justifyContent: 'center',
-                                    // alignContent: 'center',
-                                    alignItems: 'center',
-                                }}>
+                                        alignItems: `center`,
+                                    }}
+                                />
+                                <div
+                                    style={{
+                                        content: ` `,
+                                        // backgroundColor: 'red',
+                                        width: `80%`,
+                                        height: `100 % `,
+                                        flexDirection: `row`,
+                                        justifyItems: `center`,
+                                        justifyContent: `center`,
+                                        // alignContent: 'center',
+                                        alignItems: `center`,
+                                    }}
+                                >
                                     <motion.h3
-                                        animate={headerDetected ? 'unfadedFaster' : 'faded'} variants={variants}
-                                        style={{ color: backgroundDark ? 'white' : 'black', paddingBottom: 0, marginBottom: 0, fontSize: '1.7rem', letterSpacing: '4px' }}>System Maintenance</motion.h3>
-                                    <motion.h2
-                                        animate={headerDetected ? 'unfadedFaster' : 'faded'} variants={variants}
-                                        style={{ color: backgroundDark ? 'white' : 'black', letterSpacing: '-0.28rem', paddingTop: '1.5%', marginTop: 0, paddingBottom: '10%' }}>Result-Focused.</motion.h2>
-                                                                                <motion.div 
-                                        initial="hidden"
-                                        animate={headerDetected && 'test'}
+                                        animate={
+                                            headerDetected
+                                                ? `unfadedFaster`
+                                                : `faded`
+                                        }
                                         variants={variants}
-                                        style={{}}>
-                                        <div className="colorLine" style={{display: 'inline-block', position: 'relative', bottom: '15px', backgroundColor: 'lightblue', opacity: 0.8, height: '3px'}}/>
-                                        <div className="colorLine" style={{display: 'inline-block', position: 'relative', bottom: '15px', backgroundColor: 'mediumspringgreen', opacity: 0.5, height: '3px'}}/>
-                                        <div className="colorLine" style={{display: 'inline-block', position: 'relative', bottom: '15px', backgroundColor: 'orangered', opacity: 0.6, height: '3px'}}/>
-                                        </motion.div>
-                                    <h5 style={{ color: backgroundDark ? 'white' : 'black' }} >At Clutter Free Hawai’i, our passion is to contribute to a unique and sustainable island community. We strive to be the innovative leader in the industries we serve, creating strong relationships with our valued clients and giving forward to the community.</h5>
+                                        style={{
+                                            color: backgroundDark
+                                                ? `white`
+                                                : `black`,
+                                            paddingBottom: 0,
+                                            marginBottom: 0,
+                                            fontSize: `1.7rem`,
+                                            letterSpacing: `4px`,
+                                        }}
+                                    >
+                                        System Maintenance
+                                    </motion.h3>
+                                    <motion.h2
+                                        animate={
+                                            headerDetected
+                                                ? `unfadedFaster`
+                                                : `faded`
+                                        }
+                                        variants={variants}
+                                        style={{
+                                            color: backgroundDark
+                                                ? `white`
+                                                : `black`,
+                                            letterSpacing: `-0.28rem`,
+                                            paddingTop: `1.5%`,
+                                            marginTop: 0,
+                                            paddingBottom: `10%`,
+                                        }}
+                                    >
+                                        Result-Focused.
+                                    </motion.h2>
+                                    <motion.div
+                                        initial="hidden"
+                                        animate={headerDetected && `test`}
+                                        variants={variants}
+                                        style={{}}
+                                    >
+                                        <div
+                                            className="colorLine"
+                                            style={{
+                                                display: `inline-block`,
+                                                position: `relative`,
+                                                bottom: `15px`,
+                                                backgroundColor: `lightblue`,
+                                                opacity: 0.8,
+                                                height: `3px`,
+                                            }}
+                                        />
+                                        <div
+                                            className="colorLine"
+                                            style={{
+                                                display: `inline-block`,
+                                                position: `relative`,
+                                                bottom: `15px`,
+                                                backgroundColor: `mediumspringgreen`,
+                                                opacity: 0.5,
+                                                height: `3px`,
+                                            }}
+                                        />
+                                        <div
+                                            className="colorLine"
+                                            style={{
+                                                display: `inline-block`,
+                                                position: `relative`,
+                                                bottom: `15px`,
+                                                backgroundColor: `orangered`,
+                                                opacity: 0.6,
+                                                height: `3px`,
+                                            }}
+                                        />
+                                    </motion.div>
+                                    <h5
+                                        style={{
+                                            color: backgroundDark
+                                                ? `white`
+                                                : `black`,
+                                        }}
+                                    >
+                                        With over 2 years of deeply immersed
+                                        experience, Clutter Free Hawaii
+                                        represents a collective of specialized
+                                        skills, where we deliver smart solutions
+                                        on a personal level. Our clutter-removal
+                                        specialists allow us to exceed
+                                        expectations on a daily basis, from
+                                        dedicated removal solutions to design
+                                        and staging that work.
+                                    </h5>
                                     <div className="textUnderlineDiv balanceSpan2" />
                                     <div
                                         className="balanceSpan1"
                                         style={{
-                                            content: ' ',
-                                            height: '50px',
-                                        }} />
+                                            content: ` `,
+                                            height: `50px`,
+                                        }}
+                                    />
                                 </div>
                             </div>
                         </div>

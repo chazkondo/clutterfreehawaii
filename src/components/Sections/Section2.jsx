@@ -246,8 +246,7 @@ function Section2({ backgroundDark }) {
                                                 display: `inline-block`,
                                                 position: `relative`,
                                                 bottom: `15px`,
-                                                backgroundColor:
-                                                    `mediumspringgreen`,
+                                                backgroundColor: `mediumspringgreen`,
                                                 opacity: 0.5,
                                                 height: `3px`,
                                             }}
@@ -271,13 +270,14 @@ function Section2({ backgroundDark }) {
                                                 : `black`,
                                         }}
                                     >
-                                        At Clutter Free Hawai’i, our passion is
-                                        to contribute to a unique and
-                                        sustainable island community. We strive
-                                        to be the innovative leader in the
-                                        industries we serve, creating strong
-                                        relationships with our valued clients
-                                        and giving forward to the community.
+                                        Clutter Free Hawaii is a small and
+                                        growing organization with an innovative
+                                        passion. Moved by our transformative
+                                        projects, and revitalizing our homes to
+                                        its full actualized state, Clutter Free
+                                        Hawaii is changing the way people
+                                        perceive their whole life including the
+                                        people in their Ohana.
                                     </h5>
                                     <div className="textUnderlineDiv" />
                                     <div

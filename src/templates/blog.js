@@ -122,9 +122,11 @@ const Blog = ({ data, location, pageContext }) => {
                         {/* </span> */}
                     </header>
                     <section className="post-feed">
-                        {currentPosts.map(({ node }, index, arr) => (
-                            <PostCard key={node.id} post={node} />
-                        ))}
+                        {currentPosts.map(({ node }, index, arr) => {
+                            if (node.meta_title !== `Data schema`) {
+                                return <PostCard key={node.id} post={node} />
+                            }
+                        })}
                     </section>
 
                     {/* <Pagination pageContext={pageContext} /> */}
