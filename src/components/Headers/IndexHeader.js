@@ -37,7 +37,7 @@ function IndexHeader({ backgroundDark, size }) {
                     height: "100%",
                     width: "100%",
                     position: "absolute",
-                    zIndex: 3,
+                    zIndex: -2,
                 }}
             />
             <div
