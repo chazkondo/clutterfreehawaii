@@ -273,7 +273,7 @@ function Section2({ backgroundDark }) {
                                         Clutter Free Hawaii is a small and
                                         growing organization with an innovative
                                         passion. Moved by our transformative
-                                        projects, and revitalizing our homes to
+                                        projects and revitalizing our homes to
                                         its full actualized state, Clutter Free
                                         Hawaii is changing the way people
                                         perceive their whole life including the
