@@ -436,9 +436,9 @@ function IndexNavbar(props) {
                                                 <NavItem>
                                                     <NavLink
                                                         data-placement="bottom"
-                                                        href="mailto:clutterfreehawaii@gmail.com"
-                                                        target="_blank"
-                                                        title="Follow us on Instagram"
+                                                        href="#contact"
+                                                        target="_self"
+                                                        title="Contact us today!"
                                                     >
                                                         Contact
                                                     </NavLink>
