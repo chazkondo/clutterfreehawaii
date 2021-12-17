@@ -1651,6 +1651,9 @@ h6 {
     .aes {
         display: none
     }
+    .atm {
+        display: none !important
+    }
     .act {
         display: none
     }
@@ -1769,6 +1772,9 @@ h6 {
         animation: spin1 2s linear infinite;
         position: absolute
       }
+      .topSVG {
+        width: 200vw !important
+    }
   }
 
   @media (min-width: 511px) {
@@ -1781,9 +1787,6 @@ h6 {
   }
 
   @media (max-width: 360px) {
-    .topSVG {
-        display: none
-    }
     .bottomSVG {
         display: none
     }
