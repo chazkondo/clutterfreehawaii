@@ -1,14 +1,11 @@
 import React from "react"
 
-import { Container } from 'reactstrap'
-import { motion } from 'framer-motion'
+import { Container } from "reactstrap"
+import { motion } from "framer-motion"
 
-
-import useIntersect from "../Helpers/useIntersect";
-
+import useIntersect from "../Helpers/useIntersect"
 
 function Section1({ backgroundDark, size }) {
-
     const [functionFired, setFunctionFired] = React.useState(false)
     const [functionWasFired, functionIsFiring] = React.useState(false)
     const [captionDetected, setCaptionDetected] = React.useState(false)
@@ -19,26 +16,26 @@ function Section1({ backgroundDark, size }) {
     // const [function3Fired, setFunction3Fired] = React.useState(false)
 
     const [exitRef, exit] = useIntersect({
-        threshold: 1
-    });
+        threshold: 1,
+    })
 
     const [headerRef, header] = useIntersect({
-        threshold: 1
-    });
+        threshold: 1,
+    })
 
     const [captionRef, caption] = useIntersect({
-        threshold: 1
-    });
+        threshold: 1,
+    })
 
     const [bottomRef, bottom] = useIntersect({
-        threshold: 1
-    });
+        threshold: 1,
+    })
 
     let isVisible = false
 
     const variants = {
         hidden: {
-            width: "0px",
+            width: `0px`,
         },
         faded: {
             opacity: 0,
@@ -50,8 +47,8 @@ function Section1({ backgroundDark, size }) {
             transition: { delay: 0, duration: 0.6, ease: `easeInOut` },
         },
         hiddenAndFaded: {
-            width: "0px",
-            opacity: 0
+            width: `0px`,
+            opacity: 0,
         },
         unfaded: {
             opacity: 1,
@@ -68,28 +65,28 @@ function Section1({ backgroundDark, size }) {
             transition: { delay: 0, duration: 0.7, ease: `easeInOut` },
         },
         atmosphere: {
-            width: "95%",
+            width: `95%`,
             rotate: 0,
             transition: { delay: 0, duration: 0.7, ease: `easeInOut` },
         },
         aesthetics: {
-            width: "187px",
+            width: `187px`,
             rotate: 0,
             transition: { delay: 0.5, duration: 0.7, ease: `easeInOut` },
         },
         action: {
-            width: "135px",
+            width: `135px`,
             rotate: 0,
             transition: { delay: 1, duration: 0.7, ease: `easeInOut` },
         },
-        invisible: {
-            width: "0px",
-            rotate: 0,
-            transition: { delay: 0, duration: 0.7, ease: `easeInOut` },
-        },
+        // invisible: {
+        //     width: `0px`,
+        //     rotate: 0,
+        //     transition: { delay: 0, duration: 0.7, ease: `easeInOut` },
+        // },
         bottom: {
-            position: 'relative',
-            top: "100px"
+            position: `relative`,
+            top: `100px`,
         },
         top: {
             top: 0,
@@ -99,9 +96,9 @@ function Section1({ backgroundDark, size }) {
 
     function toggleHighlightsOn() {
         if (caption.intersectionRatio === 1 && exit.intersectionRatio === 1) {
-            return isVisible = true
+            return (isVisible = true)
         } else {
-            return isVisible = false
+            return (isVisible = false)
         }
     }
 
@@ -140,12 +137,46 @@ function Section1({ backgroundDark, size }) {
             {toggleHighlightsOn()}
             {!functionWasFired && bottomDetected()}
             <span ref={exitRef} />
-            <div className={backgroundDark ? "section1Dark balanceDiv" : "section1 balanceDiv"}>
-                <div className={backgroundDark ? "sectionOverlayDark" : "sectionOverlay"} />
-                <div className={backgroundDark ? "dividerDark" : "divider"} />
+            <div
+                className={
+                    backgroundDark
+                        ? `section1Dark balanceDiv`
+                        : `section1 balanceDiv`
+                }
+            >
+                <div
+                    className={
+                        backgroundDark ? `sectionOverlayDark` : `sectionOverlay`
+                    }
+                />
+                <div className={backgroundDark ? `dividerDark` : `divider`} />
 
-                <Container className="section1Container" style={{ textAlign: 'center', paddingTop: '8.5%', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
-                    <svg className="topSVG" style={{ fill: backgroundDark ? 'lightgreen' : 'green', position: 'absolute', bottom: '8%', opacity: backgroundDark ? 0.1 : 0.11, zIndex: backgroundDark ? '0' : '-3' }} width="100%" height="640pt" version="1.0" viewBox="0 0 1280 640" xmlns="http://www.w3.org/2000/svg">
+                <Container
+                    className="section1Container"
+                    style={{
+                        textAlign: `center`,
+                        paddingTop: `8.5%`,
+                        display: `flex`,
+                        flexDirection: `column`,
+                        justifyContent: `center`,
+                        alignItems: `center`,
+                    }}
+                >
+                    <svg
+                        className="topSVG"
+                        style={{
+                            fill: backgroundDark ? `lightgreen` : `green`,
+                            position: `absolute`,
+                            bottom: `8%`,
+                            opacity: backgroundDark ? 0.1 : 0.11,
+                            zIndex: backgroundDark ? `0` : `-3`,
+                        }}
+                        width="100%"
+                        height="640pt"
+                        version="1.0"
+                        viewBox="0 0 1280 640"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
                         <g transform="matrix(.1 0 0 -.1 1.1668 610.83)">
                             <path d="m5668 4220c-29-29-30-34-26-94 6-95 34-132 147-190 82-42 116-49 75-16-8 8-27 33-41 57-23 40-25 49-18 122 8 89 0 113-45 136-42 22-58 19-92-15z" />
                             <path d="m7033 4231c-41-25-46-45-38-139 8-87-1-117-49-161-47-44-27-43 65 5 113 58 141 95 147 190 4 60 3 65-26 94-35 35-55 37-99 11z" />
@@ -167,93 +198,181 @@ function Section1({ backgroundDark, size }) {
                             <path d="m8183 2474c-89-200-52-362 71-310 66 28 71 121 15 266-47 123-50 124-86 44z" />
                         </g>
                     </svg>
-                    <div className="section1Header" style={{
-                        display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gridTemplateRows: '1fr', gridGap: 0, columnGap: 0, margin: '0 auto',
-                        padding: 0
-                    }}>
-                        <div ref={headerRef} style={{
-                            display: 'grid', gridTemplateColumns: '1fr', gridTemplateRows: '1fr', gridTemplateAreas: "'overlap'", margin: 0, gridGap: 0,
+                    <div
+                        className="section1Header"
+                        style={{
+                            display: `grid`,
+                            gridTemplateColumns: `1fr 1fr 1fr`,
+                            gridTemplateRows: `1fr`,
+                            gridGap: 0,
+                            columnGap: 0,
+                            margin: `0 auto`,
                             padding: 0,
-                        }}>
+                        }}
+                    >
+                        <div
+                            ref={headerRef}
+                            style={{
+                                display: `grid`,
+                                gridTemplateColumns: `1fr`,
+                                gridTemplateRows: `1fr`,
+                                gridTemplateAreas: `'overlap'`,
+                                margin: 0,
+                                gridGap: 0,
+                                padding: 0,
+                            }}
+                        >
                             <motion.h1
-                                className={backgroundDark ? "overlapDark" : "overlap"}
+                                className={
+                                    backgroundDark ? `overlapDark` : `overlap`
+                                }
                                 variants={variants}
-                                initial={size.width > 767 ? "bottom" : "top"}
-                                animate={headerDetected && "top"}
-                                transition={{ ease: "easeOut", duration: 0.6 }} style={{ color: 'rgba(63, 63, 63, 1)', letterSpacing: '-0.45rem', alignSelf: 'center', justifySelf: 'end', margin: 0, padding: 0 }}>Aesthetics.
+                                initial={size.width > 767 ? `bottom` : `top`}
+                                animate={headerDetected && `top`}
+                                transition={{ ease: `easeOut`, duration: 0.6 }}
+                                style={{
+                                    color: `rgba(63, 63, 63, 1)`,
+                                    letterSpacing: `-0.45rem`,
+                                    alignSelf: `center`,
+                                    justifySelf: `end`,
+                                    margin: 0,
+                                    padding: 0,
+                                }}
+                            >
+                                Aesthetics.
                             </motion.h1>
                             <motion.span
                                 className="underline aes"
                                 variants={variants}
                                 initial="hidden"
-                                animate={isVisible ? "aesthetics" : "invisible"}
+                                animate={isVisible ? `aesthetics` : `invisible`}
                             />
                         </div>
-                        <div style={{
-                            display: 'grid', gridTemplateColumns: '1fr', gridTemplateRows: '1fr', gridTemplateAreas: "'overlap'", margin: '0 auto', gridGap: 0,
-                            padding: 0,
-
-                        }}>
+                        <div
+                            style={{
+                                display: `grid`,
+                                gridTemplateColumns: `1fr`,
+                                gridTemplateRows: `1fr`,
+                                gridTemplateAreas: `'overlap'`,
+                                margin: `0 auto`,
+                                gridGap: 0,
+                                padding: 0,
+                            }}
+                        >
                             <motion.h1
-                                className={backgroundDark ? "overlapDark" : "overlap"}
+                                className={
+                                    backgroundDark ? `overlapDark` : `overlap`
+                                }
                                 variants={variants}
-                                initial={size.width > 767 ? "bottom" : "top"}
-                                animate={headerDetected && "top"}
-                                transition={{ ease: "easeOut", duration: 0.6 }} style={{ color: 'rgba(52, 52, 52, 1)', letterSpacing: '-0.45rem', alignSelf: 'center', justifySelf: 'center' }}>&nbsp;Atmosphere.
+                                initial={size.width > 767 ? `bottom` : `top`}
+                                animate={headerDetected && `top`}
+                                transition={{ ease: `easeOut`, duration: 0.6 }}
+                                style={{
+                                    color: `rgba(52, 52, 52, 1)`,
+                                    letterSpacing: `-0.45rem`,
+                                    alignSelf: `center`,
+                                    justifySelf: `center`,
+                                }}
+                            >
+                                &nbsp;Atmosphere.
                             </motion.h1>
                             <motion.span
                                 className="underline atm"
                                 variants={variants}
                                 initial="hidden"
-                                animate={isVisible ? "atmosphere" : "invisible"}
+                                animate={isVisible ? `atmosphere` : `invisible`}
                             />
                         </div>
-                        <div style={{
-                            display: 'grid', gridTemplateColumns: '1fr', gridTemplateRows: '1fr', gridTemplateAreas: "'overlap'", margin: '0', gridGap: 0,
-                            padding: 0
-                        }}>
+                        <div
+                            style={{
+                                display: `grid`,
+                                gridTemplateColumns: `1fr`,
+                                gridTemplateRows: `1fr`,
+                                gridTemplateAreas: `'overlap'`,
+                                margin: `0`,
+                                gridGap: 0,
+                                padding: 0,
+                            }}
+                        >
                             <motion.h1
-                                className={backgroundDark ? "overlapDark" : "overlap"}
+                                className={
+                                    backgroundDark ? `overlapDark` : `overlap`
+                                }
                                 variants={variants}
-                                initial={size.width > 767 ? "bottom" : "top"}
-                                animate={headerDetected && "top"}
-                                transition={{ ease: "easeOut", duration: 0.6 }} style={{ color: 'rgba(42, 42, 42, 1)', letterSpacing: '-0.45rem', alignSelf: 'center', justifySelf: 'start', margin: 0, padding: 0, }}>&nbsp;Action.
+                                initial={size.width > 767 ? `bottom` : `top`}
+                                animate={headerDetected && `top`}
+                                transition={{ ease: `easeOut`, duration: 0.6 }}
+                                style={{
+                                    color: `rgba(42, 42, 42, 1)`,
+                                    letterSpacing: `-0.45rem`,
+                                    alignSelf: `center`,
+                                    justifySelf: `start`,
+                                    margin: 0,
+                                    padding: 0,
+                                }}
+                            >
+                                &nbsp;Action.
                             </motion.h1>
                             <motion.span
                                 className="underline act"
                                 variants={variants}
                                 initial="hidden"
-                                animate={isVisible ? "action" : "invisible"}
+                                animate={isVisible ? `action` : `invisible`}
                             />
                         </div>
                     </div>
                     <motion.h3
-                        className={backgroundDark ? "section1CaptionDark" : "section1Caption"}
+                        className={
+                            backgroundDark
+                                ? `section1CaptionDark`
+                                : `section1Caption`
+                        }
                         variants={variants}
-                        initial={size.width > 767 ? "faded" : "unfaded"}
-                        animate={captionDetected && "unfaded"}
+                        initial={size.width > 767 ? `faded` : `unfaded`}
+                        animate={captionDetected && `unfaded`}
                         style={{
-                            color: 'rgba(50, 50, 50, 1)',
-                            letterSpacing: '0rem',
-                            paddingTop: '5%',
-                            fontSize: '2.7rem',
-                            textShadow: backgroundDark ? '1px 1px rgba(0,0,0,0.2)' : 'none'
-                        }}>
+                            color: `rgba(50, 50, 50, 1)`,
+                            letterSpacing: `0rem`,
+                            paddingTop: `5%`,
+                            fontSize: `2.7rem`,
+                            textShadow: backgroundDark
+                                ? `1px 1px rgba(0,0,0,0.2)`
+                                : `none`,
+                        }}
+                    >
                         <span ref={captionRef} />
-                        At Clutter Free Hawai’i, our passion is crafting a unique and sustainable atmosphere for our clients. We focus on the
-                        delicate balance of functionality versus aesthetics, and strive to find new innovative solutions. We are driven by the quality
-                        of our relationships and the continued improvement of our community.
-                        </motion.h3>
+                        At Clutter Free Hawai’i, our passion is crafting a
+                        unique and sustainable atmosphere for our clients. We
+                        focus on the delicate balance of functionality versus
+                        aesthetics, and strive to find new innovative solutions.
+                        We are driven by the quality of our relationships and
+                        the continued improvement of our community.
+                    </motion.h3>
 
                     <motion.svg
                         variants={variants}
                         initial="faded"
-                        animate={backgroundDark ? borderVisible ? "lessFaded2" : "fadedTransition" : borderVisible ? "lessFaded" : "fadedTransition"}
+                        animate={
+                            backgroundDark
+                                ? borderVisible
+                                    ? `lessFaded2`
+                                    : `fadedTransition`
+                                : borderVisible
+                                    ? `lessFaded`
+                                    : `fadedTransition`
+                        }
                         className="section1Divider1 bottomSVG"
-                        style={{ zIndex: backgroundDark ? '0' : '-2' }}
-                        width="100%" height="640pt" version="1.0" viewBox="-30 0 1280 600" xmlns="http://www.w3.org/2000/svg">
+                        style={{ zIndex: backgroundDark ? `0` : `-2` }}
+                        width="100%"
+                        height="640pt"
+                        version="1.0"
+                        viewBox="-30 0 1280 600"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
                         <g
-                            fill={backgroundDark ? "white" : "green"} transform="translate(0 275) scale(.1 -.1)">
+                            fill={backgroundDark ? `white` : `green`}
+                            transform="translate(0 275) scale(.1 -.1)"
+                        >
                             <path d="m323 3303c-18-6-16-48 2-84 9-16 34-43 57-59 42-31 115-56 126-45 10 10-46 109-82 144-32 31-80 52-103 44z" />
                             {/* <path d="m12436 3299c-41-11-99-71-126-130-13-27-21-51-18-54 10-10 108 26 138 51 36 31 60 73 60 107 0 30-15 37-54 26z" /> */}
                             <path d="m5040 3164c0-29 9-45 55-93 58-61 67-84 38-99-23-12-42-5-73 24-57 52-120 36-215-55-42-40-53-56-44-62 8-4 43-31 79-59 59-48 67-52 106-47 26 2 60 17 87 37 87 62 117 16 38-58-49-46-51-50-51-100 0-29 3-52 7-52s28 21 54 46c39 39 56 48 100 55 85 13 124 71 84 123-33 44-12 58 44 30 40-20 85-7 127 37 33 35 28 51-27 81-40 22-80 18-121-12-15-11-32-20-38-20-15 0-12 36 5 50 21 18 19 66-5 90-13 13-33 20-61 20-52 0-96 21-139 65-19 19-38 35-42 35s-8-16-8-36z" />
@@ -280,12 +399,27 @@ function Section1({ backgroundDark, size }) {
                     <motion.svg
                         variants={variants}
                         initial="faded"
-                        animate={backgroundDark ? borderVisible ? "lessFaded2" : "fadedTransition" : borderVisible ? "lessFaded" : "fadedTransition"}
+                        animate={
+                            backgroundDark
+                                ? borderVisible
+                                    ? `lessFaded2`
+                                    : `fadedTransition`
+                                : borderVisible
+                                    ? `lessFaded`
+                                    : `fadedTransition`
+                        }
                         className="section1Divider2 bottomSVG"
-                        style={{ zIndex: backgroundDark ? '0' : '-2' }}
-                        width="100%" height="640pt" version="1.0" viewBox="30 0 1280 600" xmlns="http://www.w3.org/2000/svg">
+                        style={{ zIndex: backgroundDark ? `0` : `-2` }}
+                        width="100%"
+                        height="640pt"
+                        version="1.0"
+                        viewBox="30 0 1280 600"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
                         <g
-                            fill={backgroundDark ? "white" : "green"} transform="translate(0 275) scale(.1 -.1)">
+                            fill={backgroundDark ? `white` : `green`}
+                            transform="translate(0 275) scale(.1 -.1)"
+                        >
                             {/* <path d="m323 3303c-18-6-16-48 2-84 9-16 34-43 57-59 42-31 115-56 126-45 10 10-46 109-82 144-32 31-80 52-103 44z" /> */}
                             <path d="m12436 3299c-41-11-99-71-126-130-13-27-21-51-18-54 10-10 108 26 138 51 36 31 60 73 60 107 0 30-15 37-54 26z" />
                             {/* <path d="m5040 3164c0-29 9-45 55-93 58-61 67-84 38-99-23-12-42-5-73 24-57 52-120 36-215-55-42-40-53-56-44-62 8-4 43-31 79-59 59-48 67-52 106-47 26 2 60 17 87 37 87 62 117 16 38-58-49-46-51-50-51-100 0-29 3-52 7-52s28 21 54 46c39 39 56 48 100 55 85 13 124 71 84 123-33 44-12 58 44 30 40-20 85-7 127 37 33 35 28 51-27 81-40 22-80 18-121-12-15-11-32-20-38-20-15 0-12 36 5 50 21 18 19 66-5 90-13 13-33 20-61 20-52 0-96 21-139 65-19 19-38 35-42 35s-8-16-8-36z" /> */}
@@ -310,13 +444,16 @@ function Section1({ backgroundDark, size }) {
                         </g>
                     </motion.svg>
                 </Container>
-                <div style={{
-                    fontFamily: 'sans-serif',
-                    textAlign: 'center'
-                }}>
-                </div>
-                <div style={{ position: 'absolute', bottom: '-25%' }} ref={bottomRef} />
-
+                <div
+                    style={{
+                        fontFamily: `sans-serif`,
+                        textAlign: `center`,
+                    }}
+                ></div>
+                <div
+                    style={{ position: `absolute`, bottom: `-25%` }}
+                    ref={bottomRef}
+                />
             </div>
             {/* <div style={{ border: '2px solid green', width: '100%', height: '100%', display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}> */}
             {/* </div> */}
