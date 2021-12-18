@@ -245,7 +245,7 @@ function Section1({ backgroundDark, size }) {
                                 className="underline aes"
                                 variants={variants}
                                 initial="hidden"
-                                animate={isVisible ? `aesthetics` : `invisible`}
+                                animate={isVisible && `aesthetics`}
                             />
                         </div>
                         <div
@@ -280,7 +280,7 @@ function Section1({ backgroundDark, size }) {
                                 className="underline atm"
                                 variants={variants}
                                 initial="hidden"
-                                animate={isVisible ? `atmosphere` : `invisible`}
+                                animate={isVisible && `atmosphere`}
                             />
                         </div>
                         <div
@@ -317,7 +317,7 @@ function Section1({ backgroundDark, size }) {
                                 className="underline act"
                                 variants={variants}
                                 initial="hidden"
-                                animate={isVisible ? `action` : `invisible`}
+                                animate={isVisible && `action`}
                             />
                         </div>
                     </div>
