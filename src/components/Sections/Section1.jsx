@@ -232,7 +232,6 @@ function Section1({ backgroundDark, size }) {
                                 transition={{ ease: `easeOut`, duration: 0.6 }}
                                 style={{
                                     color: `rgba(63, 63, 63, 1)`,
-                                    letterSpacing: `-0.45rem`,
                                     alignSelf: `center`,
                                     justifySelf: `end`,
                                     margin: 0,
@@ -249,15 +248,7 @@ function Section1({ backgroundDark, size }) {
                             />
                         </div>
                         <div
-                            style={{
-                                display: `grid`,
-                                gridTemplateColumns: `1fr`,
-                                gridTemplateRows: `1fr`,
-                                gridTemplateAreas: `'overlap'`,
-                                margin: `0 auto`,
-                                gridGap: 0,
-                                padding: 0,
-                            }}
+                            className="gridStuff"
                         >
                             <motion.h1
                                 className={
@@ -269,7 +260,6 @@ function Section1({ backgroundDark, size }) {
                                 transition={{ ease: `easeOut`, duration: 0.6 }}
                                 style={{
                                     color: `rgba(52, 52, 52, 1)`,
-                                    letterSpacing: `-0.45rem`,
                                     alignSelf: `center`,
                                     justifySelf: `center`,
                                 }}
@@ -304,7 +294,6 @@ function Section1({ backgroundDark, size }) {
                                 transition={{ ease: `easeOut`, duration: 0.6 }}
                                 style={{
                                     color: `rgba(42, 42, 42, 1)`,
-                                    letterSpacing: `-0.45rem`,
                                     alignSelf: `center`,
                                     justifySelf: `start`,
                                     margin: 0,
